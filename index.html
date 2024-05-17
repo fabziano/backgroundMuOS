@@ -11,80 +11,22 @@
   </head>
   <body>
     <article>
-      <form action="artbox.html">
-        <button type="submit">4:3</button>
-      </form>
-        <button id="botaoColarFoto2">Colar Background</button>
-        <button id="botaoColarFoto">Colar Capa</button>
+      <a href="artbox.html">4:3</a>
+      <a id="botaoColarFoto2" href="#">Colar Background</a>
+      <a id="botaoColarFoto" href="#"> Colar Capa</a>
     </article>
-    <div class="jogo" id="jogo">
-      <div id="preview3"></div>
-      <div id="preview2"></div>
-      <div id="preview"></div>
-      <div class="case">
-        <img src="assets/img/case.png" alt="case">
-      </div>
-    </div>
-    <section>
+    <main>
+        <div id="jogo">
+            <img class="case" src="assets/img/case.png" alt="case">
+            <div id="capaJogo"></div>
+            <div id="backgroundJogo"></div>
+        </div>
+    </main>
+    <article>
       <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
-      <button id="converterParaPNG">Baixar Foto</button>
-    </section>
-
-    <script>
-      const preview = document.getElementById("preview"),
-        nomeFoto = document.getElementById("nomeFoto"),
-        botaoColarFoto = document.getElementById("botaoColarFoto"),
-        botaoColarFoto2 = document.getElementById("botaoColarFoto2"),
-        jogo = document.getElementById("jogo");
-
-      function salvarComoPNG() {
-        const e = nomeFoto.value.trim();
-        "" !== e ? html2canvas(document.getElementById("jogo"), {
-          width: 640,
-          height: 480,
-          scale: 1
-        }).then((t => {
-          const o = document.createElement("a");
-          o.download = e + ".png", o.href = t.toDataURL("image/png"), o.click()
-        })) : alert("Por favor, insira um nome para o arquivo.")
-      }
-      botaoColarFoto.addEventListener("click", (function() {
-        navigator.clipboard.read().then((e => {
-          for (const t of e)
-            if (t.types.includes("image/png") || t.types.includes("image/jpeg")) {
-              t.getType("image/png").then((e => {
-                const t = new FileReader;
-                t.onload = function(e) {
-                  const t = e.target.result,
-                    o = document.createElement("img");
-                  o.src = t, o.style.minWidth = "153px", o.style.minHeight = "234px", o.style.maxWidth = "153px", o.style.maxHeight = "234px", o.style.borderRadius = "0.25em", preview.innerHTML = "", preview.appendChild(o), nomeFoto.focus()
-                }, t.readAsDataURL(e)
-              }));
-              break
-            }
-        })).catch((e => {
-          console.error("Failed to read clipboard contents: ", e)
-        }))
-      })), botaoColarFoto2.addEventListener("click", (function() {
-        navigator.clipboard.read().then((e => {
-          for (const t of e)
-            if (t.types.includes("image/png") || t.types.includes("image/jpeg")) {
-              t.getType("image/png").then((e => {
-                const t = new FileReader;
-                t.onload = function(e) {
-                  const t = e.target.result,
-                    o = document.createElement("img");
-                  o.src = t, o.style.minWidth = "640px", o.style.minHeight = "480px", o.style.maxWidth = "640px", o.style.maxHeight = "480px", preview2.innerHTML = "", preview2.appendChild(o), nomeFoto.focus()
-                }, t.readAsDataURL(e)
-              }));
-              break
-            }
-        })).catch((e => {
-          console.error("Failed to read clipboard contents: ", e)
-        }))
-      }));
-      const botaoConverterParaPNG = document.getElementById("converterParaPNG");
-      botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
-    </script>
+      <a id="converterParaPNG" href="#">Baixar Foto</a>
+    </article>
+    
+    <script src="assets/script/script.js"></script>
   </body>
 </html>
