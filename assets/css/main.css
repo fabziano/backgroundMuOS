@@ -1,68 +1,50 @@
-#preview2,
-button {
-  background-color: #111;
-}
-#preview2,
-#preview3 {
-  position: absolute;
-  width: 640px;
-  height: 480px;
-}
-.jogo,
-article,
-body,
-section {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body{
+    background-color: #303030;
+    font-family: sans-serif;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
-.case img,
-article,
-section {
-  position: relative;
+main{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    padding: 1em;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+article{
+    margin: 1em;
+    display: flex;
+    gap:1em;
 }
-body {
-  background-color: #303030;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+article input{
+    text-align: center;
+    font-size: 1.1em;
 }
-article {
-  gap: 1em;
-  margin-bottom: 2.5em;
-  margin-top: 1em;
+a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #111;
+    padding: 0.7em;
+    text-align: center;
+    vertical-align:middle;
+    border-radius: 0.5em;
 }
-section {
-  gap: 0.5em;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3em;
+a:hover{
+    background-color: #1b1b1b;
 }
-section input {
-  padding: 0.5em;
-  text-align: center;
-  border: 1.5px solid #111;
-  border-radius: 2px;
+#jogo{
+    background-color: #000;
+    width: 640px;
+    height: 480px;
+    pointer-events: none; 
 }
-button {
-  cursor: pointer;
-  display: block;
-  border-radius: 0.5em;
-  color: #fff;
-  border: 1.5px solid #111;
-  padding: 0.5em;
-  font-weight: 700;
-}
-button:hover {
-  background-color: #202020;
-  border: 1.5px solid #202020;
+#backgroundJogo{
+    opacity: 0.3;
+    z-index: 1;
 }
