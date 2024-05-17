@@ -1,0 +1,16 @@
+.case {
+    position: absolute;
+    width:210px;
+    height:194px;
+    user-select: none;
+    margin-top:14em;
+    margin-left:24.7em;
+    pointer-events: none; 
+    z-index: 3;
+  }
+  #capaJogo{
+      position: absolute;
+      margin-top:14.04em;
+      margin-left:24.75em;
+      z-index: 2;
+  }
