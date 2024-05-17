@@ -1,25 +1,16 @@
-#preview {
+.case {
   position: absolute;
-  margin-top: 10.875em;
-  margin-left: 28.5em;
-  z-index: 4;
-}
-#preview2 {
-  opacity: 2;
-}
-#preview3 {
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 3;
-}
-.jogo {
-  flex-direction: column;
-  user-select: none;
-}
-.case img {
   width: 187px;
   height: 250px;
-  margin-top: 10.5em;
-  margin-left: 27em;
-  z-index: 5;
   user-select: none;
+  margin-top:10.5em;
+  margin-left:27em;
+  pointer-events: none; 
+  z-index: 3;
+}
+#capaJogo{
+    position: absolute;
+    margin-top:10.875em;
+    margin-left:28.5em;
+    z-index: 2;
 }
