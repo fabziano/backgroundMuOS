@@ -1,0 +1,8 @@
+#capaJogo{
+    position: absolute;
+    margin-top:11.5em;
+    margin-left:24.75em;
+    z-index: 2;
+    width:208px;
+    height: 252px;
+}
