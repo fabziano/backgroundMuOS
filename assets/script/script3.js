@@ -120,9 +120,9 @@ function salvarComoPNG() {
         } else {
             image.src = "assets/img/folder/DEFAULT.png";
         }
-    }
+    };
 
- function changeBackground() {
+    function changeBackground() {
         var selectedConsole = document.getElementById("consoleGames").value;
         var backgroundImage = document.getElementById("backgroundJogo");
         
