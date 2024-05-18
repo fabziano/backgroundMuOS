@@ -121,3 +121,72 @@ function salvarComoPNG() {
             image.src = "assets/img/folder/DEFAULT.png";
         }
     }
+
+ function changeBackground() {
+        var selectedConsole = document.getElementById("consoleGames").value;
+        var backgroundImage = document.getElementById("backgroundJogo");
+        
+        var backgroundImages = {
+            "amiga": "url(assets/img/folder2/amiga.webp)",
+            "amstrad": "url(assets/img/folder2/amstradcpc.webp)",
+            "apps": "url(assets/img/folder2/apps.webp)",
+            "arcade": "url(assets/img/folder2/arcade.webp)",
+            "atari2600": "url(assets/img/folder2/atari2600.webp)",
+            "atari5200": "url(assets/img/folder2/atari5200.webp)",
+            "atari7800": "url(assets/img/folder2/atari7800.webp)",
+            "atarilynx": "url(assets/img/folder2/atarilynx.webp)",
+            "atarist": "url(assets/img/folder2/atarist.webp)",
+            "bandaiws": "url(assets/img/folder2/wonderswancolor.webp)",
+            "c64": "url(assets/img/folder2/c64.webp)",
+            "coleco": "url(assets/img/folder2/colecovision.webp)",
+            "cps1": "url(assets/img/folder2/cps1.webp)",
+            "cps2": "url(assets/img/folder2/cps2.webp)",
+            "cps3": "url(assets/img/folder2/cps3.webp)",
+            "dreamcast": "url(assets/img/folder2/dreamcast.webp)",
+            "external": "url(assets/img/folder2/ports.webp)",
+            "gameandwatch": "url(assets/img/folder2/gameandwatch.webp)",
+            "gamegear": "url(assets/img/folder2/gamegear.webp)",
+            "gb": "url(assets/img/folder2/gb.webp)",
+            "gba": "url(assets/img/folder2/gba.webp)",
+            "gbc": "url(assets/img/folder2/gbc.webp)",
+            "snes": "url(assets/img/folder2/snes.webp)",
+            "snes2": "url(assets/img/folder2/snes2.webp)",
+            "famicom": "url(assets/img/folder2/famicom.webp)",
+            "hbmame": "url(assets/img/folder2/hbmame.webp)",
+            "lowresnx": "url(assets/img/folder2/lowresnx.webp)",
+            "mame": "url(assets/img/folder2/mame.webp)",
+            "megacd": "url(assets/img/folder2/segacd.webp)",
+            "megadrive": "url(assets/img/folder2/megadrive.webp)",
+            "mobile": "url(assets/img/folder2/j2me.webp)",
+            "msx": "url(assets/img/folder2/msx.webp)",
+            "n64": "url(assets/img/folder2/n64.webp)",
+            "nds": "url(assets/img/folder2/nds.webp)",
+            "neogeocd": "url(assets/img/folder2/neogeocd.webp)",
+            "neogeopocket": "url(assets/img/folder2/ngpc.webp)",
+            "nes": "url(assets/img/folder2/nes.webp)",
+            "pce": "url(assets/img/folder2/pcengine.webp)",
+            "pc8000": "url(assets/img/folder2/pc88.webp)",
+            "pc98": "url(assets/img/folder2/pc98.webp)",
+            "pcfx": "url(assets/img/folder2/pcfx.webp)",
+            "pico8": "url(assets/img/folder2/pico8.webp)",
+            "pokemonmini": "url(assets/img/folder2/pokemini.webp)",
+            "psp": "url(assets/img/folder2/psp.webp)",
+            "psx": "url(assets/img/folder2/psx.webp)",
+            "rpgmaker": "url(assets/img/folder2/easyrpg.webp)",
+            "scummvm": "url(assets/img/folder2/scummvm.webp)",
+            "sega32x": "url(assets/img/folder2/sega32x.webp)",
+            "sms": "url(assets/img/folder2/mastersystem.webp)",
+            "supergrafx": "url(assets/img/folder2/supergrafx.webp)",
+            "vb": "url(assets/img/folder2/virtualboy.webp)",
+            "x68000": "url(assets/img/folder2/x68000.webp)",
+            "zxspectrum": "url(assets/img/folder2/zxspectrum.webp)"
+        };
+        
+        if (backgroundImages[selectedConsole]) {
+            backgroundImage.style.backgroundImage = backgroundImages[selectedConsole];
+            backgroundImage.style.backgroundSize = "640px 480px";
+        } else {
+            backgroundImage.style.backgroundSize = "640px 480px";
+            backgroundImage.style.backgroundImage = "none";
+        }
+    }
