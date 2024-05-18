@@ -84,6 +84,7 @@ function salvarComoPNG() {
             "gbc": "assets/img/folder/gbc.png",
             "snes": "assets/img/folder/snes.png",
             "snes2": "assets/img/folder/snes2.png",
+            "famicom": "assets/img/folder/famicom.png",
             "hbmame": "assets/img/folder/hbmame.png",
             "lowresnx": "assets/img/folder/lowresnx.png",
             "mame": "assets/img/folder/mame.png",
