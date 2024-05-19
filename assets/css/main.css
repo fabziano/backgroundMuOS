@@ -48,7 +48,7 @@ nav a:after {
 nav a:hover:after {
     transform: scaleX(1);
 }
-article{
+section, article{
     margin: 1em;
     display: flex;
     gap:1em;
@@ -60,7 +60,8 @@ article input{
 article a{
     color: #fff;
     text-decoration: none;
-    background-color: #111;
+    background-color: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    background-image: linear-gradient(90deg, rgb(6, 191, 255) 0%, rgb(45, 115, 255) 100%);
     padding: 0.7em;
     text-align: center;
     vertical-align:middle;
@@ -68,7 +69,25 @@ article a{
     font-weight: 600;
 }
 article a:hover{
-    background-color: #1b1b1b;
+    background-color: linear-gradient(90deg, #2D73FF 0%, #06BFFF 100%);
+    background-image: linear-gradient(90deg, rgb(6, 191, 255) 20%, rgb(45, 115, 255) 100%);
+}
+section a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #5f8311;
+    padding: 0.7em;
+    text-align: center;
+    vertical-align:middle;
+    border-radius: 0.5em;
+    font-weight: 600;
+}
+section a:hover{
+    background-color: #5f8311;
+}
+section input{
+    text-align: center;
+    font-size: 1.1em;
 }
 #jogo{
     background-color: #000;
