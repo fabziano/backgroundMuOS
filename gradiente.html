@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Background muOS</title>
+    <title>Template muOS</title>
     <link rel="icon" type="image/png" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/style2.css">
+    <link rel="stylesheet" href="assets/css/style4.css">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </head>
   <body>
@@ -24,21 +24,24 @@
       </nav>
     </header>
     <article>
-      <a id="botaoColarFoto2" href="#">Colar Background</a>
-      <a id="botaoColarFoto" href="#"> Colar Capa</a>
+      <a id="colarBackground" href="#">Imagem do Jogo</a>
+      <a id="colarLogo" href="#">Logo do Jogo</a>
     </article>
     <main>
         <div id="jogo">
-            <img class="case" src="assets/img/case2.png" alt="case">
+          <div id="gradientOverlay"></div>
+
             <div id="capaJogo"></div>
-            <div id="backgroundJogo"></div>
+            <div id="logoJogo"></div>
+            </div>
         </div>
     </main>
     <article>
-      <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
-      <a id="converterParaPNG" href="#">Baixar Foto</a>
+      <input type="text" id="nomeFoto" placeholder="Enter file name" autocomplete="off">
+      <a id="converterParaPNG" href="#">Download</a>
     </article>
     
-    <script src="assets/script/script2.js"></script>
+    <script src="assets/script/script4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   </body>
 </html>
