@@ -49,7 +49,7 @@ colarBackground.addEventListener("click", () => {
 });
 
 colarLogo.addEventListener("click", () => {
-    handlePasteImage(logoJogo, "250px", "auto", "250px", "auto");
+    handlePasteImage(logoJogo, "200px", "auto", "200px", "auto");
 });
 
 function salvarComoPNG() {
