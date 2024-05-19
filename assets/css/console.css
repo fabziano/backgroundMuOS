@@ -22,7 +22,7 @@
 }
 #gradientOverlay {
     position: absolute;
-    opacity: 0.8;
+    opacity: 0.7;
     width: 640px;
     height: 480px;
     background-color: #000; 
