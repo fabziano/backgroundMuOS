@@ -1,28 +1,17 @@
 #jogo{
+  background-color: #000;
   width: 640px;
   height: 480px;
   overflow: hidden;
   position: relative;
-  background-color: #000; 
 }
-#capaJogo{
+#logoJogo{
   position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: end;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  margin-top: 15em;
+  margin-left:23.5em;
+  z-index: 4;
 }
-#capaJogo img {
-  cursor: move;
-  position: relative;
-  z-index: 1; 
-}
-
-#gradientOverlay {
+.efeito {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,9 +21,16 @@
   z-index: 2;
   pointer-events: none; 
 }
-#logoJogo {
+#backgroundJogo{
   position: absolute;
-  top: 16em; 
-  left: 23.5em; 
-  z-index: 3; 
+  display: flex;
+  width: 640px;
+  height: 480px;
+  justify-content: end;
+  z-index: 1;
+}
+#backgroundJogo img {
+  cursor: move; 
+  position: relative; 
+  z-index: 2; 
 }

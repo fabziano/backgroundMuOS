@@ -1,9 +1,10 @@
-const capaJogo = document.getElementById("capaJogo");
 const jogo = document.getElementById("jogo");
-const logoJogo = document.getElementById("logoJogo");
 const nomeFoto = document.getElementById("nomeFoto");
 const colarBackground = document.getElementById("colarBackground");
+const backgroundJogo = document.getElementById("backgroundJogo");
 const colarLogo = document.getElementById("colarLogo");
+const logoJogo = document.getElementById("logoJogo");
+
 const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 
 botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
@@ -29,7 +30,7 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         targetElement.appendChild(img);
                         nomeFoto.focus();
                         
-                        if (targetElement === capaJogo || targetElement === logoJogo) {
+                        if (targetElement === backgroundJogo || targetElement === logoJogo) {
                             addDragAndDropFunctionality(img);
                         }
                     };
@@ -43,9 +44,8 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
     });
 }
 
-
 colarBackground.addEventListener("click", () => {
-    handlePasteImage(capaJogo, "auto", "480px", "auto", "480px");
+    handlePasteImage(backgroundJogo, "auto", "480px", "auto", "480px");
 });
 
 colarLogo.addEventListener("click", () => {
@@ -101,9 +101,8 @@ function addDragAndDropFunctionality(img) {
             const currentX = event.clientX;
             const currentY = event.clientY;
             const dx = currentX - initialX;
-            const dy = currentY - initialY;
-            
-            if (img.parentElement === capaJogo) {
+            const dy = currentY - initialY;   
+            if (img.parentElement === backgroundJogo) {
                 img.style.left = (offsetX + dx) + 'px';
             } else {
                 img.style.left = (offsetX + dx) + 'px'; 
