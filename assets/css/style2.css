@@ -1,3 +1,13 @@
+#jogo{
+    background-color: #000;
+    width: 640px;
+    height: 480px;
+    pointer-events: none; 
+}
+#backgroundJogo{
+    opacity: 0.3;
+    z-index: 1;
+}
 .case {
     position: absolute;
     width:210px;
