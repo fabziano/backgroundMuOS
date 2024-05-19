@@ -9,14 +9,14 @@
     z-index: 1;
 }
 .case {
-  position: absolute;
-  width: 187px;
-  height: 250px;
-  user-select: none;
-  margin-top:10.5em;
-  margin-left:27em;
-  pointer-events: none; 
-  z-index: 3;
+    position: absolute;
+    width: 187px;
+    height: 250px;
+    user-select: none;
+    margin-top:10.5em;
+    margin-left:27em;
+    pointer-events: none; 
+    z-index: 3;
 }
 #capaJogo{
     position: absolute;

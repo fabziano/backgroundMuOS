@@ -89,12 +89,3 @@ section input{
     text-align: center;
     font-size: 1.1em;
 }
-#jogo{
-    background-color: #000;
-    width: 640px;
-    height: 480px;
-    pointer-events: none; 
-}
-#backgroundJogo{
-    z-index: 1;
-}
