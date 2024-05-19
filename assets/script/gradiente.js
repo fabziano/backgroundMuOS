@@ -111,3 +111,9 @@ function addDragAndDropFunctionality(img) {
         }
     }
 }
+
+nomeFoto.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        salvarComoPNG();
+    }
+});
