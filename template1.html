@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Template muOS</title>
+    <link rel="icon" type="image/png" href="assets/img/icon.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/template1.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+          <img src="assets/img/icon.png" alt="logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="tutorial" style="color: #1a9fff;">Tutorial</a></li>
+          <li><a href="template1">Estilo 01</a></li>
+          <li><a href="gradiente">Gradiente</a></li>
+          <li><a href="index">Estilo CD</a></li>
+          <li><a href="artbox">Estilo Blu-ray</a></li>
+          <li><a href="console">Consoles</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div style="width: 50%;text-align: center;padding: 1em;color: #fff;" class="recado">
+      <strong><p>Esse estilo permite mover os elementos após Colar, basta arrastar a imagem de Capa e Logo como achar melhor.</p></strong>
+    </div>
+    <article>
+      <a id="botaoColarFoto" href="#">Colar Capa</a>
+      <a id="botaoColarFoto3" href="#">Colar Logo</a>
+      <a id="botaoColarFoto2" href="#">Colar Background</a>
+    </article>
+    <main>
+        <div id="jogo">
+            <div id="capaJogo"></div>
+            <div id="backgroundJogo"></div>
+            <div id="logoJogo"></div>
+            </div>
+        </div>
+    </main>
+    <article>
+      <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
+      <a id="converterParaPNG" href="#">Baixar Foto</a>
+    </article>
+    
+    <script src="assets/script/template1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  </body>
+</html>
