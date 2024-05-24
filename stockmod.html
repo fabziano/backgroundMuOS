@@ -54,10 +54,10 @@
         </nav>
       </header>
       <div style="width: 50%;text-align: center;padding: 1em;color: #fff;" class="recado">
-        <strong><p>Esse template é para a Stock OS, basta dar Enter no nome para baixar</p></strong>
+        <strong><p>Esse template é para a Stock OS</p></strong>
       </div>
       <article>
-        <a id="colarFoto" href="#">Colar</a>
+        <a id="colarFoto" href="#">Colar Capa</a>
       </article>
     <div id="container">
       <div id="capaJogo"></div><img class="case" src="assets/img/case3.png" alt="CD">
@@ -65,6 +65,7 @@
 
     <section>
         <input style="padding: 0.5em;" id="nomeFoto" placeholder="Nome do arquivo" autocomplete="off">
+        <a id="converterParaPNG" href="#">Baixar Foto</a>
     </section>
     
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
@@ -87,6 +88,9 @@
         }))
       }
 
+      const botaoConverterParaPNG = document.getElementById("converterParaPNG");
+      botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
+
       function salvarComoPNG() {
         let e = document.getElementById("nomeFoto").value.trim();
         "" === e && (e = "imagem");
@@ -103,6 +107,8 @@
       })), document.addEventListener("keydown", (function(e) {
         "Enter" === e.key && salvarComoPNG()
       }))
+
+
     </script>
   </body>
 </html>
