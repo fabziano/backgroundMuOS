@@ -123,4 +123,3 @@ nomeFoto.addEventListener("keypress", function(event) {
         salvarComoPNG();
     }
 });
-

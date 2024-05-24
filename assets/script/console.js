@@ -190,3 +190,10 @@ function salvarComoPNG() {
             backgroundImage.style.backgroundImage = "none";
         }
     }
+
+    nomeFoto.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            salvarComoPNG();
+        }
+    });
+    

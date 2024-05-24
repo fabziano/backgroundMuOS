@@ -60,3 +60,9 @@ function salvarComoPNG() {
         alert("Por favor, insira um nome para o arquivo.");
     }
 }
+
+nomeFoto.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        salvarComoPNG();
+    }
+});
