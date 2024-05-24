@@ -181,6 +181,9 @@ function salvarComoPNG() {
             "x68000": "url(assets/img/folder2/x68000.webp)",
             "zxspectrum": "url(assets/img/folder2/zxspectrum.webp)"
         };
+
+        backgroundImage.innerHTML = ""; // Limpar qualquer imagem personalizada
+
         
         if (backgroundImages[selectedConsole]) {
             backgroundImage.style.backgroundImage = backgroundImages[selectedConsole];
