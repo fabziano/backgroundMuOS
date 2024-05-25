@@ -52,6 +52,9 @@ nav a:after {
 nav a:hover:after {
     transform: scaleX(1);
 }
+.mark {
+    border-bottom: solid 3px #fff;
+}
 section, article{
     margin: 1em;
     display: flex;
