@@ -12,6 +12,7 @@
     z-index: 3;
     width:208px;
     height: 252px;
+    pointer-events: none; 
 }
 #backgroundJogo {
     position: absolute;
