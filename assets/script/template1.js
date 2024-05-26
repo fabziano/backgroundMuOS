@@ -107,13 +107,10 @@ function addDragAndDropFunctionality(img) {
             const currentY = event.clientY;
             const dx = currentX - initialX;
             const dy = currentY - initialY;
-            
-            if (img.parentElement === capaJogo) {
                 img.style.left = (offsetX + dx) + 'px';
-            } else {
                 img.style.left = (offsetX + dx) + 'px'; 
                 img.style.top = (offsetY + dy) + 'px'; 
-            }
+
         }
     }
 }
@@ -122,4 +119,38 @@ nomeFoto.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         salvarComoPNG();
     }
+});
+
+//Zoom de Capa e Logo
+
+let scaleCapa = 1;
+let scaleLogo = 1;
+
+const zoomCapaElements = document.querySelectorAll(".zoomCapa");
+const zoomLogoElements = document.querySelectorAll(".zoomLogo");
+
+function setTransformCapa(el) {
+  el.style.transform = `scale(${scaleCapa}) skewX(6deg)`;
+}
+
+function setTransformLogo(el) {
+  el.style.transform = `scale(${scaleLogo})`;
+}
+
+Array.prototype.map.call(zoomCapaElements, item => {
+  item.onwheel = function (e) {
+    e.preventDefault();
+    let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+    (delta > 0) ? (scaleCapa *= 1.05) : (scaleCapa /= 1.05);
+    setTransformCapa(item.firstChild);
+  }
+});
+
+Array.prototype.map.call(zoomLogoElements, item => {
+  item.onwheel = function (e) {
+    e.preventDefault();
+    let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+    (delta > 0) ? (scaleLogo *= 1.05) : (scaleLogo /= 1.05);
+    setTransformLogo(item.firstChild);
+  }
 });
