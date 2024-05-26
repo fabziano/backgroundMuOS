@@ -102,12 +102,10 @@ function addDragAndDropFunctionality(img) {
             const currentY = event.clientY;
             const dx = currentX - initialX;
             const dy = currentY - initialY;   
-            if (img.parentElement === backgroundJogo) {
                 img.style.left = (offsetX + dx) + 'px';
-            } else {
                 img.style.left = (offsetX + dx) + 'px'; 
                 img.style.top = (offsetY + dy) + 'px'; 
-            }
+            
         }
     }
 }
@@ -115,5 +113,21 @@ function addDragAndDropFunctionality(img) {
 nomeFoto.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         salvarComoPNG();
+    }
+});
+
+let scale = 1;
+zoomElements = document.querySelectorAll(".zoom");
+
+function setTransform(el) {
+    el.style.transform = "scale(" + scale + ")";
+}
+
+Array.prototype.map.call(zoomElements, item => {
+    item.onwheel = function (e) {
+        e.preventDefault();
+        let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+        (delta > 0) ? (scale *= 1.05) : (scale /= 1.05);
+        setTransform(item.firstChild);
     }
 });
