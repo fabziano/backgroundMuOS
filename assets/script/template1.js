@@ -61,17 +61,23 @@ function salvarComoPNG() {
     const nomeArquivo = nomeFoto.value.trim();
     if (nomeArquivo !== "") {
         const jogo = document.getElementById("jogo");
+        const rect = jogo.getBoundingClientRect(); 
 
-        domtoimage.toBlob(jogo)
-            .then(blob => {
-                const link = document.createElement('a');
-                link.href = window.URL.createObjectURL(blob);
-                link.download = `${nomeArquivo}.png`;
-                link.click();
-            })
-            .catch(error => {
-                console.error("Erro ao salvar como PNG: ", error);
-            });
+        domtoimage.toBlob(jogo, { 
+            width: rect.width, 
+            height: rect.height, 
+            left: rect.left, 
+            top: rect.top 
+        })
+        .then(blob => {
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = `${nomeArquivo}.png`;
+            link.click();
+        })
+        .catch(error => {
+            console.error("Erro ao salvar como PNG: ", error);
+        });
     } else {
         alert("Por favor, insira um nome para o arquivo.");
     }
