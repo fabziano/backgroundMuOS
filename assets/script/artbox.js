@@ -44,25 +44,21 @@ botaoColarFoto2.addEventListener("click", () => {
 });
 
 function salvarComoPNG() {
-    const nomeArquivo = nomeFoto.value.trim() || "Imagem"; // Usando "Imagem" como nome padrão
-    const jogo = document.getElementById("jogo");
-    const rect = jogo.getBoundingClientRect(); 
-
-    domtoimage.toBlob(jogo, { 
-        width: rect.width, 
-        height: rect.height, 
-        left: rect.left, 
-        top: rect.top 
-    })
-    .then(blob => {
-        const link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        link.download = `${nomeArquivo}.png`;
-        link.click();
-    })
-    .catch(error => {
-        console.error("Erro ao salvar como PNG: ", error);
-    });
+    const nomeArquivo = nomeFoto.value.trim();
+    if (nomeArquivo !== "") {
+        html2canvas(jogo, {
+            width: 640,
+            height: 480,
+            scale: 1
+        }).then((canvas) => {
+            const link = document.createElement("a");
+            link.download = nomeArquivo + ".png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+        });
+    } else {
+        alert("Por favor, insira um nome para o arquivo.");
+    }
 }
 
 nomeFoto.addEventListener("keypress", function(event) {
