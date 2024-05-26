@@ -9,7 +9,6 @@
   margin-top: 15em;
   margin-left:23.5em;
   z-index: 4;
-  pointer-events: none; 
 }
 #backgroundJogo{
   mask-image: linear-gradient(90deg, transparent 55%, black 100%);
