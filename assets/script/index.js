@@ -44,22 +44,21 @@ botaoColarFoto2.addEventListener("click", () => {
 });
 
 function salvarComoPNG() {
-    const nomeArquivo = nomeFoto.value.trim();
-    if (nomeArquivo !== "") {
-        html2canvas(jogo, {
-            width: 640,
-            height: 480,
-            scale: 1,
-            backgroundColor: null
-        }).then((canvas) => {
-            const link = document.createElement("a");
-            link.download = nomeArquivo + ".png";
-            link.href = canvas.toDataURL("image/png");
-            link.click();
-        });
-    } else {
-        alert("Por favor, insira um nome para o arquivo.");
+    let nomeArquivo = nomeFoto.value.trim();
+    if (nomeArquivo === "") {
+        nomeArquivo = "Imagem";
     }
+    html2canvas(jogo, {
+        width: 640,
+        height: 480,
+        scale: 1,
+        backgroundColor: null // Configura o fundo transparente
+    }).then((canvas) => {
+        const link = document.createElement("a");
+        link.download = nomeArquivo + ".png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+    });
 }
 
 nomeFoto.addEventListener("keypress", function(event) {
