@@ -1,5 +1,5 @@
 #jogo{
-    background-color: #000;
+    background-color: transparent; 
     width: 640px;
     height: 480px;
     pointer-events: none; 
