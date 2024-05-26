@@ -52,7 +52,7 @@ function salvarComoPNG() {
         width: 640,
         height: 480,
         scale: 1,
-        backgroundColor: null // Configura o fundo transparente
+        backgroundColor: null 
     }).then((canvas) => {
         const link = document.createElement("a");
         link.download = nomeArquivo + ".png";
