@@ -156,3 +156,11 @@ Array.prototype.map.call(zoomLogoElements, item => {
     setTransformLogo(item.firstChild);
   }
 });
+
+const PlanoDeFundo = document.querySelector('#jogo');
+const seletor = document.getElementById('seletor');
+
+seletor.addEventListener('input', () => {
+    const corEscolhida = seletor.value;
+    PlanoDeFundo.style.backgroundColor = corEscolhida;
+});
