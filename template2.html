@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Template muOS</title>
+    <link rel="icon" type="image/png" href="assets/img/icon.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/template2.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+          <img src="assets/img/icon.png" alt="logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="tutorial" style="color: #1a9fff;">Tutorial</a></li>
+          <li><a class="mark" href="template1">Estilo 01</a></li>
+          <li><a href="gradiente">Gradiente</a></li>
+          <li><a href="index">Estilo CD</a></li>
+          <li><a href="artbox">Estilo Blu-ray</a></li>
+          <li><a href="console">Consoles</a></li>
+          <li><a href="stockmod" style="color: #799905; text-transform: none;">StockOS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <article>
+      <a id="botaoColarPersonagem" href="#">Colar Personagem</a>
+      <a id="botaoColarLogo" href="#">Colar Logo</a>
+    </article>
+    <input type="color" value="#2D73FF" id="seletor" title="Cor do Background"/>
+    <main>
+      <div class="limite"></div>
+      <div id="jogo">
+          <div id="capaJogo" class="zoomCapa"></div>
+          <div id="personagemJogo" class="zoomPersonagem"></div>
+          <div id="backgroundJogo"></div>
+          <div id="logoJogo" class="zoomLogo"></div>
+      </div>
+   </main>
+  
+    <article>
+      <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
+      <a id="converterParaPNG" href="#">Baixar Foto</a>
+    </article>
+    
+    <script src="assets/script/template2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  </body>
+</html>
