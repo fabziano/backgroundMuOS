@@ -33,6 +33,9 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         if (targetElement === capaJogo || targetElement === logoJogo) {
                             addDragAndDropFunctionality(img);
                         }
+                        if (targetElement === backgroundJogo) {
+                            jogo.style.backgroundColor = "#000";
+                        }
                     };
                     reader.readAsDataURL(blob);
                 });
