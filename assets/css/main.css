@@ -96,3 +96,10 @@ section input{
     text-align: center;
     font-size: 1.1em;
 }
+
+.limite{
+    position: absolute;
+    width: 640px;
+    height: 480px;
+    outline: 2px solid black;
+}
