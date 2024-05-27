@@ -162,7 +162,7 @@ function salvarComoPNG() {
             "msx": "url(assets/img/folder2/msx.webp)",
             "n64": "url(assets/img/folder2/n64.webp)",
             "nds": "url(assets/img/folder2/nds.webp)",
-            "neogeo": "assets/img/folder2/neogeo.webp",
+            "neogeo": "url(assets/img/folder2/neogeo.webp)",
             "neogeocd": "url(assets/img/folder2/neogeocd.webp)",
             "neogeopocket": "url(assets/img/folder2/ngpc.webp)",
             "nes": "url(assets/img/folder2/nes.webp)",
