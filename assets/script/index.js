@@ -24,6 +24,10 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         targetElement.innerHTML = "";
                         targetElement.appendChild(img);
                         nomeFoto.focus();
+
+                        if (targetElement === backgroundJogo) {
+                            jogo.style.backgroundColor = "#000";
+                        }
                     };
                     reader.readAsDataURL(blob);
                 });
