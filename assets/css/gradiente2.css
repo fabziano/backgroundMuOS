@@ -18,7 +18,7 @@
   z-index: 3; 
   clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
   overflow: hidden;
-  background-color: #2967d8;
+  background-color: transparent;
   width: 230px;
   height: 480px;
   display: flex;
