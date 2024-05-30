@@ -1,6 +1,6 @@
 #jogo{
   background-color: transparent;
-  mask-image: linear-gradient(90deg, transparent 55%, black 100%);
+  mask-image: linear-gradient(90deg, transparent 10%, black 100%);
 
   width: 640px;
   height: 480px;
