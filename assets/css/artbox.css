@@ -5,7 +5,7 @@
     pointer-events: none; 
 }
 #backgroundJogo{
-    opacity: 0.25;
+    opacity: 0.2;
     z-index: 1;
 }
 .case {

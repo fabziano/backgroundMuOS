@@ -7,7 +7,7 @@
 }
 #backgroundJogo{
   position: absolute;
-  opacity: 0.3;
+  opacity: 0.2;
   z-index: 1;
   filter: blur(2px);
 }
