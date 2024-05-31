@@ -88,7 +88,7 @@ botaoColarFoto.addEventListener("click", () => {
         if (gameImages[selectedConsole]) {
             image.src = gameImages[selectedConsole];
         } else {
-            image.src = "assets/img/folder/DEFAULT.png";
+            image.src = "assets/img/logo/DEFAULT.png";
         }
     };
 
