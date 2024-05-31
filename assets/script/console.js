@@ -71,7 +71,6 @@ function salvarComoPNG() {
             "atarist": "assets/img/folder/atarist.png",
             "bandaiws": "assets/img/folder/wonderswancolor.png",
             "c64": "assets/img/folder/c64.png",
-            "coleco": "assets/img/folder/colecovision.png",
             "cps1": "assets/img/folder/cps1.png",
             "cps2": "assets/img/folder/cps2.png",
             "cps3": "assets/img/folder/cps3.png",
@@ -90,7 +89,6 @@ function salvarComoPNG() {
             "mame": "assets/img/folder/mame.png",
             "megacd": "assets/img/folder/segacd.png",
             "megadrive": "assets/img/folder/megadrive.png",
-            "mobile": "assets/img/folder/j2me.png",
             "msx": "assets/img/folder/msx.png",
             "n64": "assets/img/folder/n64.png",
             "nds": "assets/img/folder/nds.png",
@@ -113,7 +111,6 @@ function salvarComoPNG() {
             "supergrafx": "assets/img/folder/supergrafx.png",
             "vb": "assets/img/folder/virtualboy.png",
             "x68000": "assets/img/folder/x68000.png",
-            "zxspectrum": "assets/img/folder/zxspectrum.png"
         };
         
         if (gameImages[selectedConsole]) {
@@ -139,7 +136,6 @@ function salvarComoPNG() {
             "atarist": "url(assets/img/folder2/atarist.webp)",
             "bandaiws": "url(assets/img/folder2/wonderswancolor.webp)",
             "c64": "url(assets/img/folder2/c64.webp)",
-            "coleco": "url(assets/img/folder2/colecovision.webp)",
             "cps1": "url(assets/img/folder2/cps1.webp)",
             "cps2": "url(assets/img/folder2/cps2.webp)",
             "cps3": "url(assets/img/folder2/cps3.webp)",
@@ -158,7 +154,6 @@ function salvarComoPNG() {
             "mame": "url(assets/img/folder2/mame.webp)",
             "megacd": "url(assets/img/folder2/segacd.webp)",
             "megadrive": "url(assets/img/folder2/megadrive.webp)",
-            "mobile": "url(assets/img/folder2/j2me.webp)",
             "msx": "url(assets/img/folder2/msx.webp)",
             "n64": "url(assets/img/folder2/n64.webp)",
             "nds": "url(assets/img/folder2/nds.webp)",
@@ -181,7 +176,6 @@ function salvarComoPNG() {
             "supergrafx": "url(assets/img/folder2/supergrafx.webp)",
             "vb": "url(assets/img/folder2/virtualboy.webp)",
             "x68000": "url(assets/img/folder2/x68000.webp)",
-            "zxspectrum": "url(assets/img/folder2/zxspectrum.webp)"
         };
 
         backgroundImage.innerHTML = ""; // Limpar qualquer imagem personalizada
