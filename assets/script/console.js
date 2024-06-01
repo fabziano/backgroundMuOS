@@ -5,6 +5,19 @@ const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 
 botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
 
+const removerBackgroundBtn = document.getElementById("removerBackgroundBtn");
+removerBackgroundBtn.addEventListener("click", removerBackground);
+
+// Função para remover o background
+function removerBackground() {
+    const backgroundImage = document.getElementById("backgroundJogo");
+    const gradientOverlay = document.getElementById("gradientOverlay");
+
+    backgroundImage.style.backgroundImage = "none";
+    backgroundImage.innerHTML = ""; // Limpar qualquer imagem que tenha sido colada pelo usuário
+    gradientOverlay.style.display = "none";
+}
+
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
         for (const item of clipboardItems) {
@@ -21,6 +34,8 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         img.style.maxHeight = maxHeight;
                         targetElement.innerHTML = "";
                         targetElement.appendChild(img);
+                        const gradientOverlay = document.getElementById("gradientOverlay");
+                        gradientOverlay.style.display = "block";
                         nomeFoto.focus();
                     };
                     reader.readAsDataURL(blob);
@@ -95,6 +110,7 @@ botaoColarFoto.addEventListener("click", () => {
     function changeBackground() {
         var selectedConsole = document.getElementById("consoleGames").value;
         var backgroundImage = document.getElementById("backgroundJogo");
+        var gradientOverlay = document.getElementById("gradientOverlay"); 
         
         var backgroundImages = {
             "apps": "url(assets/img/background/apps.webp)",
@@ -140,40 +156,47 @@ botaoColarFoto.addEventListener("click", () => {
             "supergrafx": "url(assets/img/background/supergrafx.webp)",
         };
 
-        backgroundImage.innerHTML = ""; // Limpar qualquer imagem personalizada
+        backgroundImage.innerHTML = ""; 
 
-        
         if (backgroundImages[selectedConsole]) {
             backgroundImage.style.backgroundImage = backgroundImages[selectedConsole];
             backgroundImage.style.backgroundSize = "640px 480px";
+            gradientOverlay.style.display = "block"; 
         } else {
             backgroundImage.style.backgroundSize = "640px 480px";
             backgroundImage.style.backgroundImage = "none";
+            gradientOverlay.style.display = "none"; 
         }
     }
 
-
-function salvarComoPNG() {
-    let nomeArquivo = nomeFoto.value.trim();
-    const consoleSelecionado = document.getElementById("consoleGames").value;
-
-    if (nomeArquivo === "") {
-        nomeArquivo = consoleSelecionado;
+    function salvarComoPNG() {
+        const nomeArquivo = nomeFoto.value.trim() || document.getElementById("consoleGames").value;
+    
+        html2canvas(jogo, {
+            width: 640,
+            height: 480,
+            scale: 1,
+            backgroundColor: null 
+        }).then((canvas) => {
+            canvas.toBlob(function(blob) {
+                if (blob) {
+                    const url = URL.createObjectURL(blob);
+    
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = nomeArquivo + '.png';
+    
+                    link.click();
+    
+                    URL.revokeObjectURL(url);
+                } else {
+                    console.error('Erro ao gerar o blob.');
+                }
+            }, 'image/png');
+        });
     }
-
-    html2canvas(jogo, {
-        width: 640,
-        height: 480,
-        scale: 1,
-        background: null
-    }).then((canvas) => {
-        const link = document.createElement("a");
-        link.download = nomeArquivo + ".png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-    });
-}
-
+    
+    
 
 nomeFoto.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
