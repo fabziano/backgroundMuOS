@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Background muOS</title>
+    <link rel="icon" type="image/png" href="assets/img/icon.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/neon.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+          <img src="assets/img/icon.png" alt="logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="tutorial" style="color: #1a9fff;">Tutorial</a></li>
+          <li><a href="template1">Estilo 01</a></li>
+          <li><a href="gradiente">Gradiente</a></li>
+          <li><a href="gradiente2">Gradiente 02</a></li>
+          <li><a href="index">Estilo CD</a></li>
+          <li><a href="artbox">Estilo Blu-ray</a></li>
+          <li><a class="mark" href="console">Consoles</a></li>
+          <li><a href="stockmod" style="color: #799905; text-transform: none;">StockOS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div style="width: 50%;text-align: center;padding: 1em;color: #fff;" class="recado">
+      <strong><p>Caminho para as imagens das pastas: /SD1 (mmc)/MUOS/info/catalogue/Folder</p></strong>
+    </div>
+    <article>
+      <a id="botaoColarFoto" href="#">Colar seu background</a>
+      <a href="#" id="removerBackgroundBtn">Remover Background</a>
+
+      <select id="consoleGames" onchange="changeImage(); changeBackground()">
+        <option value="">Selecione um console</option>
+        <option value="arcade">Arcade</option>
+        <option value="atari2600">Atari 2600</option>
+        <option value="atarist">Atari ST</option>
+        <option value="cps1">CPS1</option>
+        <option value="cps2">CPS2</option>
+        <option value="cps3">CPS3</option>
+        <option value="famicom">Nintendo Family Computer</option>
+        <option value="gameandwatch">Handheld Electronic - Game and Watch</option>
+        <option value="gamegear">Sega Game Gear</option>
+        <option value="gb">Nintendo Game Boy</option>
+        <option value="gba">Nintendo Game Boy Advance</option>
+        <option value="gbc">Nintendo Game Boy Color</option>
+        <option value="mame">MAME</option>
+        <option value="dreamcast">Sega Dreamcast</option>
+        <option value="mastersystem">Sega Master System</option>
+        <option value="megacd">Sega Mega CD - Sega CD</option>
+        <option value="megadrive">Sega Mega Drive - Genesis</option>
+        <option value="n64">Nintendo N64</option>
+        <option value="nds">Nintendo DS</option>
+        <option value="neogeo">SNK Neo Geo</option>
+        <option value="nes">Nintendo NES</option>
+        <option value="ngpc">SNK Neo Geo Pocket - Color</option>
+        <option value="pcengine">NEC PC Engine</option>
+        <option value="ports">Ports</option>
+        <option value="psp">Sony PlayStation Portable</option>
+        <option value="psx">Sony PlayStation</option>
+        <option value="sega32x">Sega 32X</option>
+        <option value="segacd">Sega CD</option>
+        <option value="sfc">Nintendo SFC</option>
+        <option value="snes">Nintendo SNES</option>
+        <option value="supergrafx">NEC PC Engine SuperGrafx</option>
+        <option value="virtualboy">Nintendo Virtual Boy</option>
+        <option value="wonderswancolor">Bandai WonderSwan-Color</option>
+      </select>
+    </article>
+    <main>
+        <div class="limite"></div>
+        <div id="jogo">
+            <img id="capaJogo" class="jogo" src="assets/img/logo/DEFAULT.png" alt="Imagem do jogo">
+            <div id="gradientOverlay"></div>
+            <div id="backgroundJogo"></div>
+        </div>
+    </main>
+    <section>
+      <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
+      <a id="converterParaPNG" href="#">Baixar Foto</a>
+    </section>
+    
+    <script src="assets/script/neon.js"></script>
+  </body>
+</html>
