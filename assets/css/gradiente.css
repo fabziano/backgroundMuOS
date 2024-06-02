@@ -11,7 +11,7 @@
   z-index: 4;
 }
 #backgroundJogo{
-  mask-image: linear-gradient(90deg, transparent 55%, black 100%);
+  mask-image: linear-gradient(90deg, transparent 50%, black 100%);
   position: absolute;
   overflow: hidden;
   display: flex;
