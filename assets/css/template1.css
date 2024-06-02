@@ -29,7 +29,8 @@
   transform: skewX(6deg);
   margin-right: 6em;
   cursor: move; 
-  position: relative; 
+  position: relative;
+  opacity: 0.8;
   z-index: 2; 
 }
 
