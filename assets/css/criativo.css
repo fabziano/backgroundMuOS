@@ -1,0 +1,44 @@
+#jogo{
+  background-color: transparent;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+#jogo.gradiente {
+  mask-image: linear-gradient(90deg, transparent 50%, black 100%);
+}
+
+#img1 {
+  z-index: 1; /* Defina um z-index menor para a img1 */
+  margin-left: 1em;
+}
+#img2 {
+  z-index: 3; /* Defina um z-index maior para img2 */
+  margin-left: 3em;
+}
+#img3 {
+  z-index: 4; /* Defina um z-index maior para img3 */
+  margin-left: 6em;
+}
+#img4 {
+  z-index: 5; /* Defina um z-index maior para img4 */
+  margin-left: 9em;
+}
+#img5 {
+  z-index: 6; /* Defina um z-index maior para img5 */
+  margin-left: 12em;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Altere a cor e a opacidade conforme necessário */
+  pointer-events: none; /* Isso permite que os eventos passem pelo overlay para a imagem subjacente */
+  z-index: 2; /* Certifique-se de que o overlay esteja acima da img1 */
+}
