@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
   </head>
   <body>
     <header>
@@ -28,15 +29,17 @@
         </ul>
       </nav>
     </header>
+    <section>
+      <a class="filtro" id="AplicarGrid" href="#">Grid</a>
+      <a class="filtro" id="AplicarOverlay" href="#">Overlay</a>
+      <a class="filtro" id="AplicarGradient" href="#">Gradiente</a>
+    </section>
     <article>
-      <a id="AplicarGrid" href="#">Grid</a>
-      <a id="AplicarOverlay" href="#">Overlay</a>
-      <a id="botaoImg1" href="#">IMG 1</a>
-      <a id="botaoImg2" href="#">IMG 2</a>
-      <a id="botaoImg3" href="#">IMG 3</a>
-      <a id="botaoImg4" href="#">IMG 4</a>
-      <a id="botaoImg5" href="#">IMG 5</a>
-      <a id="AplicarGradient" href="#">Gradiente</a>
+        <a id="botaoImg1" href="#">Background</a>
+        <a id="botaoImg2" href="#">Console</a>
+        <a id="botaoImg3" href="#">Controle</a>
+        <a id="botaoImg4" href="#">Logo</a>
+        <a id="botaoImg5" href="#">Personagem</a>
     </article>
     <main>
       <div class="limite"></div>
@@ -48,10 +51,10 @@
         <div id="img5"></div>
       </div>
     </main>
-    <article>
+    <section>
       <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
       <a id="converterParaPNG" href="#">Baixar Foto</a>
-    </article>
+    </section>
     <script src="assets/script/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   </body>
