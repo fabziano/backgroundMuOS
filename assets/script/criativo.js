@@ -91,7 +91,7 @@ AplicarOverlay.addEventListener("click", function(event) {
 let gradientePresente = false;
 
 function aplicarGradiente() {
-    gradientePresente = !gradientePresente; // Inverte o estado do gradiente
+    gradientePresente = !gradientePresente; 
     if (gradientePresente) {
         jogo.classList.add('gradiente');
     } else {
@@ -110,7 +110,7 @@ function adicionarGrid() {
     if (!gridPresente) {
         const gridOverlay = document.createElement('div');
         gridOverlay.classList.add('grid');
-        gridOverlay.style.display = "block"; // Certifique-se de que a grade esteja visível
+        gridOverlay.style.display = "block";
         jogo.appendChild(gridOverlay);
         gridPresente = true;
     } else {
