@@ -52,7 +52,7 @@
   background-image:
       linear-gradient(to right, rgb(255, 0, 255) 1px, transparent 1px),
       linear-gradient(to bottom, rgb(255, 0, 255) 1px, transparent 1px);
-  background-size: 50px 50px; 
+  background-size: 60px 60px; 
   z-index: 7; 
   display: none; 
 }
