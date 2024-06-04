@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
   </head>
   <body>
     <header>
@@ -30,17 +29,10 @@
       </nav>
     </header>
     <section>
-      <a class="filtro" id="AplicarGrid" href="#">Grid</a>
-      <a class="filtro" id="AplicarOverlay" href="#">Overlay</a>
-      <a class="filtro" id="AplicarGradient" href="#">Gradiente</a>
+      <a class="filtro" id="AplicarGrid" href="#">Aplicar Grid</a>
+      <a class="filtro" id="AplicarOverlay" href="#">Aplicar Overlay</a>
+      <a class="filtro" id="AplicarGradient" href="#">Aplicar Gradiente</a>
     </section>
-    <article>
-        <a id="botaoImg1" href="#">Background</a>
-        <a id="botaoImg2" href="#">Console</a>
-        <a id="botaoImg3" href="#">Controle</a>
-        <a id="botaoImg4" href="#">Logo</a>
-        <a id="botaoImg5" href="#">Personagem</a>
-    </article>
     <main>
       <div class="limite"></div>
       <div id="jogo">
@@ -50,6 +42,43 @@
         <div id="img4"></div>
         <div id="img5"></div>
       </div>
+      <article>
+        <div class="layer">
+          <div class="checkbox-wrapper-8">
+            <input class="tgl tgl-skewed" id="checkbox1" type="checkbox" checked/>
+            <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="checkbox1"></label>
+          </div>
+          <a id="botaoImg1" href="#">Background</a>
+        </div> 
+        <div class="layer">
+          <div class="checkbox-wrapper-8">
+            <input class="tgl tgl-skewed" id="checkbox2" type="checkbox" checked/>
+            <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="checkbox2"></label>
+          </div>
+          <a id="botaoImg2" href="#">Console</a>
+        </div> 
+        <div class="layer">
+          <div class="checkbox-wrapper-8">
+            <input class="tgl tgl-skewed" id="checkbox3" type="checkbox" checked/>
+            <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="checkbox3"></label>
+          </div>
+          <a id="botaoImg3" href="#">Controle</a>
+        </div> 
+        <div class="layer">
+          <div class="checkbox-wrapper-8">
+            <input class="tgl tgl-skewed" id="checkbox4" type="checkbox" checked/>
+            <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="checkbox4"></label>
+          </div>
+          <a id="botaoImg4" href="#">Logo</a>
+        </div> 
+        <div class="layer">
+          <div class="checkbox-wrapper-8">
+            <input class="tgl tgl-skewed" id="checkbox5" type="checkbox" checked/>
+            <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="checkbox5"></label>
+          </div>
+          <a id="botaoImg5" href="#">Personagem</a>
+        </div> 
+  </article>
     </main>
     <section>
       <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
