@@ -12,23 +12,23 @@
 }
 
 #img1 {
-  z-index: 1; /* Defina um z-index menor para a img1 */
+  z-index: 1; 
   margin-left: 1em;
 }
 #img2 {
-  z-index: 3; /* Defina um z-index maior para img2 */
+  z-index: 3; 
   margin-left: 3em;
 }
 #img3 {
-  z-index: 4; /* Defina um z-index maior para img3 */
+  z-index: 4; 
   margin-left: 6em;
 }
 #img4 {
-  z-index: 5; /* Defina um z-index maior para img4 */
+  z-index: 5; 
   margin-left: 9em;
 }
 #img5 {
-  z-index: 6; /* Defina um z-index maior para img5 */
+  z-index: 6;
   margin-left: 12em;
 }
 
@@ -38,7 +38,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Altere a cor e a opacidade conforme necessário */
-  pointer-events: none; /* Isso permite que os eventos passem pelo overlay para a imagem subjacente */
-  z-index: 2; /* Certifique-se de que o overlay esteja acima da img1 */
+  background-color: rgba(0, 0, 0, 0.7); 
+  pointer-events: none; 
+  z-index: 2;
+}
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  background-image:
+      linear-gradient(to right, rgb(255, 0, 255) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255, 0, 255) 1px, transparent 1px);
+  background-size: 50px 50px; 
+  z-index: 7; 
+  display: none; 
 }
