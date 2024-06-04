@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Background muOS</title>
+    <title>Template muOS</title>
     <link rel="icon" type="image/png" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/index.css">
@@ -17,10 +17,11 @@
       <nav>
         <ul>
           <li><a href="tutorial" style="color: #1a9fff;">Tutorial</a></li>
+          <li><a class="mark" href="index">Modo Livre</a></li>
           <li><a href="template1">Estilo 01</a></li>
           <li><a href="gradiente">Gradiente</a></li>
           <li><a href="gradiente2">Gradiente 02</a></li>
-          <li><a class="mark" href="index">Estilo CD</a></li>
+          <li><a href="index">Estilo CD</a></li>
           <li><a href="artbox">Estilo Blu-ray</a></li>
           <li><a href="console">Consoles</a></li>
           <li><a href="stockmod" style="color: #799905; text-transform: none;">StockOS</a></li>
@@ -28,22 +29,30 @@
       </nav>
     </header>
     <article>
-      <a id="botaoColarFoto2" href="#">Colar Background</a>
-      <a id="botaoColarFoto" href="#">Colar Capa</a>
+      <a id="AplicarGrid" href="#">Grid</a>
+      <a id="AplicarOverlay" href="#">Overlay</a>
+      <a id="botaoImg1" href="#">IMG 1</a>
+      <a id="botaoImg2" href="#">IMG 2</a>
+      <a id="botaoImg3" href="#">IMG 3</a>
+      <a id="botaoImg4" href="#">IMG 4</a>
+      <a id="botaoImg5" href="#">IMG 5</a>
+      <a id="AplicarGradient" href="#">Gradiente</a>
     </article>
     <main>
-        <div class="limite"></div>
-        <div id="jogo">
-            <img class="case" src="assets/img/case2.png" alt="case">
-            <div id="capaJogo"></div>
-            <div id="backgroundJogo"></div>
-        </div>
+      <div class="limite"></div>
+      <div id="jogo">
+        <div id="img1"></div>
+        <div id="img2"></div>
+        <div id="img3"></div>
+        <div id="img4"></div>
+        <div id="img5"></div>
+      </div>
     </main>
-    <section>
+    <article>
       <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
       <a id="converterParaPNG" href="#">Baixar Foto</a>
-    </section>
-    
+    </article>
     <script src="assets/script/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   </body>
 </html>

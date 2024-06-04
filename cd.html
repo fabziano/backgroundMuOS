@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Template muOS</title>
+    <title>Background muOS</title>
     <link rel="icon" type="image/png" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/template2.css">
+    <link rel="stylesheet" href="assets/css/cd.css">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </head>
   <body>
@@ -17,38 +17,34 @@
       <nav>
         <ul>
           <li><a href="tutorial" style="color: #1a9fff;">Tutorial</a></li>
-          <li><a class="mark" href="template1">Estilo 01</a></li>
+          <li><a href="index">Modo Livre</a></li>
+          <li><a href="template1">Estilo 01</a></li>
           <li><a href="gradiente">Gradiente</a></li>
           <li><a href="gradiente2">Gradiente 02</a></li>
-          <li><a href="index">Estilo CD</a></li>
+          <li><a class="mark" href="cd">Estilo CD</a></li>
           <li><a href="artbox">Estilo Blu-ray</a></li>
           <li><a href="console">Consoles</a></li>
           <li><a href="stockmod" style="color: #799905; text-transform: none;">StockOS</a></li>
         </ul>
       </nav>
     </header>
-
     <article>
-      <a id="botaoColarPersonagem" href="#">Colar Personagem</a>
-      <a id="botaoColarLogo" href="#">Colar Logo</a>
+      <a id="botaoColarFoto2" href="#">Colar Background</a>
+      <a id="botaoColarFoto" href="#">Colar Capa</a>
     </article>
-    <input type="color" value="#2D73FF" id="seletor" title="Cor do Background"/>
     <main>
-      <div class="limite"></div>
-      <div id="jogo">
-          <div id="capaJogo" class="zoomCapa"></div>
-          <div id="personagemJogo" class="zoomPersonagem"></div>
-          <div id="backgroundJogo"></div>
-          <div id="logoJogo" class="zoomLogo"></div>
-      </div>
-   </main>
-  
-    <article>
+        <div class="limite"></div>
+        <div id="jogo">
+            <img class="case" src="assets/img/case2.png" alt="case">
+            <div id="capaJogo"></div>
+            <div id="backgroundJogo"></div>
+        </div>
+    </main>
+    <section>
       <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
       <a id="converterParaPNG" href="#">Baixar Foto</a>
-    </article>
+    </section>
     
-    <script src="assets/script/template2.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="assets/script/cd.js"></script>
   </body>
 </html>

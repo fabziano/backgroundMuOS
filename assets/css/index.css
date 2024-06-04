@@ -1,26 +1,58 @@
 #jogo{
-    background-color: transparent; 
-    width: 640px;
-    height: 480px;
-    pointer-events: none; 
+  background-color: transparent;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
 }
-#backgroundJogo{
-    opacity: 0.2;
-    z-index: 1;
+
+#jogo.gradiente {
+  mask-image: linear-gradient(90deg, transparent 50%, black 100%);
 }
-.case {
-    position: absolute;
-    width:210px;
-    height:194px;
-    user-select: none;
-    margin-top:14em;
-    margin-left:24.7em;
-    pointer-events: none; 
-    z-index: 3;
-  }
-  #capaJogo{
-      position: absolute;
-      margin-top:14.04em;
-      margin-left:24.75em;
-      z-index: 2;
-  }
+
+#img1 {
+  z-index: 1; 
+  margin-left: 1em;
+}
+#img2 {
+  z-index: 3; 
+  margin-left: 3em;
+}
+#img3 {
+  z-index: 4; 
+  margin-left: 6em;
+}
+#img4 {
+  z-index: 5; 
+  margin-left: 9em;
+}
+#img5 {
+  z-index: 6;
+  margin-left: 12em;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  pointer-events: none; 
+  z-index: 2;
+}
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  background-image:
+      linear-gradient(to right, rgb(255, 0, 255) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255, 0, 255) 1px, transparent 1px);
+  background-size: 60px 60px; 
+  z-index: 7; 
+  display: none; 
+}
