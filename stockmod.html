@@ -14,8 +14,8 @@
       }
 
       #container {
-        width: 31.25em;
-        height: 25em;
+        width: 312px;
+        height: 250px;
         overflow: hidden;
         flex-direction: column;
         align-items: center;
@@ -23,8 +23,8 @@
       }
 
       .case {
-        width: 25em;
-        height: 25em;
+        width: 250px;
+        height: 250px;
         position: absolute;
         z-index: 2;
         pointer-events: none
@@ -48,9 +48,9 @@
             <li><a href="template1">Estilo01</a></li>
             <li><a href="gradiente">Gradiente</a></li>
             <li><a href="cd">CD</a></li>
-            <li><a href="artbox">Blu-ray</a></li>
-            <li><a href="console">Console</a></li>
-            <li><a href="neon">Console02</a></li>
+            <li><a href="artbox">Estilo Blu-ray</a></li>
+            <li><a href="console">Consoles</a></li>
+            <li><a href="neon">Consoles 2</a></li>
             <li><a class="mark" href="stockmod" style="color: #799905; text-transform: none;">StockOS</a></li>
           </ul>
         </nav>
@@ -105,7 +105,7 @@
         }))
       }
       document.getElementById("colarFoto").addEventListener("click", (() => {
-        colarImagem("200px", "200px")
+        colarImagem("250px", "250px")
       })), document.addEventListener("keydown", (function(e) {
         "Enter" === e.key && salvarComoPNG()
       }))
