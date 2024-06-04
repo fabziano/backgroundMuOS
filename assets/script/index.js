@@ -12,6 +12,64 @@ const img3 = document.getElementById("img3");
 const img4 = document.getElementById("img4");
 const img5 = document.getElementById("img5");
 
+const checkbox1 = document.getElementById('checkbox1')
+const checkbox2 = document.getElementById('checkbox2')
+const checkbox3 = document.getElementById('checkbox3')
+const checkbox4 = document.getElementById('checkbox4')
+const checkbox5 = document.getElementById('checkbox5')
+
+
+checkbox1.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        img1.style.display = "block";
+        colarImg1.classList.remove("desliga");
+      } else {
+        img1.style.display = "none";
+        colarImg1.classList.add("desliga");
+      }
+  })
+
+checkbox2.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        img2.style.display = "block";
+        colarImg2.classList.remove("desliga");
+        } else {
+        img2.style.display = "none";
+        colarImg2.classList.add("desliga");
+        }
+})
+
+checkbox3.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        img3.style.display = "block";
+        colarImg3.classList.remove("desliga");
+        } else {
+        img3.style.display = "none";
+        colarImg3.classList.add("desliga");
+        }
+})
+
+checkbox4.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        img4.style.display = "block";
+        colarImg4.classList.remove("desliga");
+        } else {
+        img4.style.display = "none";
+        colarImg4.classList.add("desliga");
+        }
+})
+
+checkbox5.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        img5.style.display = "block";
+        colarImg5.classList.remove("desliga");
+     } else {
+        img5.style.display = "none";
+        colarImg5.classList.add("desliga");
+    }
+})
+
+
 const nomeFoto = document.getElementById("nomeFoto");
 const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
@@ -53,11 +111,11 @@ colarImg1.addEventListener("click", () => {
 });
 
 colarImg2.addEventListener("click", () => {
-    colarImagem(img2, "200px", "auto", "200px", "auto");
+    colarImagem(img2, "300px", "auto", "300px", "auto");
 });
 
 colarImg3.addEventListener("click", () => {
-    colarImagem(img3, "200px", "auto", "200px", "auto");
+    colarImagem(img3, "300px", "auto", "300px", "auto");
 });
 
 colarImg4.addEventListener("click", () => {
@@ -206,5 +264,4 @@ const imgElements = [
       delta > 0 ? (scaleImages[index] *= 1.05) : (scaleImages[index] /= 1.05);
       setTransformImg(img.firstChild, index);
     };
-  });
-  
+});
