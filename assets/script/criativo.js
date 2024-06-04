@@ -104,6 +104,26 @@ document.getElementById("AplicarGradient").addEventListener("click", function(ev
     aplicarGradiente();
 });
 
+let gridPresente = false;
+
+function adicionarGrid() {
+    if (!gridPresente) {
+        const gridOverlay = document.createElement('div');
+        gridOverlay.classList.add('grid');
+        gridOverlay.style.display = "block"; // Certifique-se de que a grade esteja visível
+        jogo.appendChild(gridOverlay);
+        gridPresente = true;
+    } else {
+        const gridOverlay = document.querySelector('.grid');
+        gridOverlay.remove();
+        gridPresente = false;
+    }
+}
+
+document.getElementById("AplicarGrid").addEventListener("click", function(event) {
+    event.preventDefault();
+    adicionarGrid();
+});
 
 function imagemArrastavel(img) {
     let isDragging = false;
