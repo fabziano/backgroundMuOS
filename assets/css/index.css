@@ -88,6 +88,9 @@ article .desliga{
   background-color: #888;
   background-image:none;
 }
+article .desliga:hover{
+  background-color: #888;
+}
 .checkbox-wrapper-8 .tgl {
   display: none;
 }
