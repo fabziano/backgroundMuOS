@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #1B2838;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+main{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+header{
+    width: 100%;
+    display: flex;
+    background-color: #171d25;
+    padding: 0 1em;
+    align-items: center;
+    justify-content: space-between;
+}
+nav{
+    background-color: #171d25;
+    padding: 0.5em 1em; 
+}
+nav ul{
+    display: flex;
+    gap:2em;
+    list-style: none;
+}
+nav ul li a{
+    overflow: hidden;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5em;
+    text-transform: uppercase;
+}
+nav a:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px #fff;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+nav a:hover:after {
+    transform: scaleX(1);
+}
+.mark {
+    border-bottom: solid 3px #fff;
+}
+section, article{
+    margin: 1em;
+    display: flex;
+    gap:1em;
+}
+article input{
+    text-align: center;
+    font-size: 1.1em;
+}
+article a{
+    color: #fff;
+    text-decoration: none;
+    background-color: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    background-image: linear-gradient(90deg, rgb(6, 191, 255) 0%, rgb(45, 115, 255) 100%);
+    padding: 0.7em;
+    text-align: center;
+    vertical-align:middle;
+    border-radius: 0.5em;
+    font-weight: 600;
+}
+article a:hover{
+    background-color: linear-gradient(90deg, #2D73FF 0%, #06BFFF 100%);
+    background-image: linear-gradient(90deg, rgb(6, 191, 255) 20%, rgb(45, 115, 255) 100%);
+}
+section a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #5f8311;
+    padding: 0.7em;
+    text-align: center;
+    vertical-align:middle;
+    border-radius: 0.5em;
+    font-weight: 600;
+}
+section a:hover{
+    background-color: #5f8311;
+}
+section input{
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.limite{
+    position: absolute;
+    width: 640px;
+    height: 480px;
+    outline: 2px solid black;
+}

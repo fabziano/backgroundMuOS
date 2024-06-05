@@ -1,0 +1,32 @@
+#jogo{
+    width: 640px;
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent; 
+  }
+#capaJogo{
+    position: absolute;
+    margin-top:9em;
+    margin-left:19em;
+    z-index: 3;
+    width:400px;
+    height: auto;
+    pointer-events: none; 
+}
+#backgroundJogo {
+    position: absolute;
+    overflow: hidden;
+    width: 640px;
+    height: 480px;
+    z-index: 1;
+}
+#gradientOverlay {
+    position: absolute;
+    opacity: 0.7;
+    width: 640px;
+    height: 480px;
+    background-color: #000; 
+    z-index: 2;
+    display: none; 
+  }

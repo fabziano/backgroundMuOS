@@ -1,0 +1,45 @@
+#jogo{
+  background-color: transparent;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+}
+#backgroundJogo{
+  position: absolute;
+  opacity: 0.2;
+  z-index: 1;
+  filter: blur(2px);
+}
+#capaJogo {
+  position: absolute;
+  margin-left: 24.5em;
+  z-index: 3; 
+  transform: skewX(-6deg);
+  overflow: hidden;
+  border: solid black;
+  background-color: black;
+  border-width: 0 0.3em 0 0.3em;
+  width: 220px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+}
+#capaJogo img {
+  transform: skewX(6deg);
+  margin-right: 6em;
+  cursor: move; 
+  position: relative;
+  opacity: 0.8;
+  z-index: 2; 
+}
+
+#logoJogo{
+  position: absolute;
+  margin-top: 19em;
+  margin-left:22em;
+  z-index: 4;
+}
+#logoJogo img{
+  cursor: move; 
+}
