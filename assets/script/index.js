@@ -1,78 +1,32 @@
 const jogo = document.getElementById("jogo");
-
-const colarImg1 = document.getElementById("botaoImg1");
-const colarImg2 = document.getElementById("botaoImg2");
-const colarImg3 = document.getElementById("botaoImg3");
-const colarImg4 = document.getElementById("botaoImg4");
-const colarImg5 = document.getElementById("botaoImg5");
-
-const img1 = document.getElementById("img1");
-const img2 = document.getElementById("img2");
-const img3 = document.getElementById("img3");
-const img4 = document.getElementById("img4");
-const img5 = document.getElementById("img5");
-
-const checkbox1 = document.getElementById('checkbox1')
-const checkbox2 = document.getElementById('checkbox2')
-const checkbox3 = document.getElementById('checkbox3')
-const checkbox4 = document.getElementById('checkbox4')
-const checkbox5 = document.getElementById('checkbox5')
-
-
-checkbox1.addEventListener('change', (event) => {
-    if (event.currentTarget.checked) {
-        img1.style.display = "block";
-        colarImg1.classList.remove("desliga");
-      } else {
-        img1.style.display = "none";
-        colarImg1.classList.add("desliga");
-      }
-  })
-
-checkbox2.addEventListener('change', (event) => {
-    if (event.currentTarget.checked) {
-        img2.style.display = "block";
-        colarImg2.classList.remove("desliga");
-        } else {
-        img2.style.display = "none";
-        colarImg2.classList.add("desliga");
-        }
-})
-
-checkbox3.addEventListener('change', (event) => {
-    if (event.currentTarget.checked) {
-        img3.style.display = "block";
-        colarImg3.classList.remove("desliga");
-        } else {
-        img3.style.display = "none";
-        colarImg3.classList.add("desliga");
-        }
-})
-
-checkbox4.addEventListener('change', (event) => {
-    if (event.currentTarget.checked) {
-        img4.style.display = "block";
-        colarImg4.classList.remove("desliga");
-        } else {
-        img4.style.display = "none";
-        colarImg4.classList.add("desliga");
-        }
-})
-
-checkbox5.addEventListener('change', (event) => {
-    if (event.currentTarget.checked) {
-        img5.style.display = "block";
-        colarImg5.classList.remove("desliga");
-     } else {
-        img5.style.display = "none";
-        colarImg5.classList.add("desliga");
-    }
-})
-
-
 const nomeFoto = document.getElementById("nomeFoto");
-const botaoConverterParaPNG = document.getElementById("converterParaPNG");
-botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
+document.getElementById("converterParaPNG").addEventListener("click", salvarComoPNG);
+
+const totalElementos = 5;
+const botaoImgs = [];
+const imgs = [];
+const checkboxs = [];
+for (let i = 1; i <= totalElementos; i++) {
+  const botaoImg = document.getElementById(`botaoImg${i}`);
+  const img = document.getElementById(`img${i}`);
+  const checkbox = document.getElementById(`checkbox${i}`);
+
+  botaoImgs.push(botaoImg);
+  imgs.push(img);
+  checkboxs.push(checkbox);
+}
+
+checkboxs.forEach((checkbox, index) => {
+    checkbox.addEventListener('change', (event) => {
+        if (event.currentTarget.checked) {
+            imgs[index].style.display = "block";
+            botaoImgs[index].classList.remove("desliga");
+        } else {
+            imgs[index].style.display = "none";
+            botaoImgs[index].classList.add("desliga");
+        }
+    });
+});
 
 function colarImagem(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
@@ -90,7 +44,6 @@ function colarImagem(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
                         img.style.maxHeight = maxHeight;
                         img.draggable = false; 
                         img.id = "draggableImage"; 
-                        img.style.position = "absolute"; 
                         targetElement.innerHTML = "";
                         targetElement.appendChild(img);
                         nomeFoto.focus();
@@ -106,42 +59,34 @@ function colarImagem(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     });
 }
 
-colarImg1.addEventListener("click", () => {
-    colarImagem(img1, "auto", "480px", "auto", "480px");
+botaoImgs.forEach((botaoImg, index) => {
+    botaoImg.addEventListener("click", () => {
+        const imagens = [img1, img2, img3, img4, img5];
+        const alturas = ["480px", "auto", "auto", "auto", "auto"];
+        const larguras = ["auto", "300px", "300px", "200px", "200px"];
+        colarImagem(imagens[index], larguras[index], alturas[index], larguras[index], alturas[index]);
+    });
 });
 
-colarImg2.addEventListener("click", () => {
-    colarImagem(img2, "300px", "auto", "300px", "auto");
-});
-
-colarImg3.addEventListener("click", () => {
-    colarImagem(img3, "300px", "auto", "300px", "auto");
-});
-
-colarImg4.addEventListener("click", () => {
-    colarImagem(img4, "200px", "auto", "200px", "auto");
-});
-
-colarImg5.addEventListener("click", () => {
-    colarImagem(img5, "200px", "auto", "200px", "auto");
-});
 
 let overlayPresente = false;
 
 function adicionarOverlay() {
+    const jogo = document.getElementById('jogo');
+    const overlay = document.querySelector('.overlay');
+
     if (!overlayPresente) {
-        const overlay = document.createElement('div');
-        overlay.classList.add('overlay');
-        jogo.appendChild(overlay);
         overlayPresente = true;
+        const novoOverlay = document.createElement('div');
+        novoOverlay.classList.add('overlay');
+        jogo.appendChild(novoOverlay);
     } else {
-        const overlay = document.querySelector('.overlay');
-        overlay.remove();
         overlayPresente = false;
+        overlay.remove();
     }
 }
 
-AplicarOverlay.addEventListener("click", function(event) {
+document.getElementById("AplicarOverlay").addEventListener("click", function(event) {
     event.preventDefault(); 
     adicionarOverlay();
 });
@@ -149,7 +94,10 @@ AplicarOverlay.addEventListener("click", function(event) {
 let gradientePresente = false;
 
 function aplicarGradiente() {
+    const jogo = document.getElementById('jogo');
+
     gradientePresente = !gradientePresente; 
+
     if (gradientePresente) {
         jogo.classList.add('gradiente');
     } else {
@@ -165,16 +113,18 @@ document.getElementById("AplicarGradient").addEventListener("click", function(ev
 let gridPresente = false;
 
 function adicionarGrid() {
+    const jogo = document.getElementById('jogo');
+    const gridOverlay = document.querySelector('.grid');
+
     if (!gridPresente) {
-        const gridOverlay = document.createElement('div');
-        gridOverlay.classList.add('grid');
-        gridOverlay.style.display = "block";
-        jogo.appendChild(gridOverlay);
         gridPresente = true;
+        const novoGrid = document.createElement('div');
+        novoGrid.classList.add('grid');
+        novoGrid.style.display = "block";
+        jogo.appendChild(novoGrid);
     } else {
-        const gridOverlay = document.querySelector('.grid');
-        gridOverlay.remove();
         gridPresente = false;
+        gridOverlay.remove();
     }
 }
 
@@ -216,6 +166,27 @@ function imagemArrastavel(img) {
     }
 }
 
+const imgElements = [];
+const scaleImages = [1, 1, 1, 1, 1];
+
+for (let i = 1; i <= totalElementos; i++) {
+  const img = document.getElementById(`img${i}`);
+  imgElements.push(img);
+}
+
+function setTransformImg(el, index) {
+  el.style.transform = `scale(${scaleImages[index]})`;
+}
+
+imgElements.forEach((img, index) => {
+  img.onwheel = function (e) {
+    e.preventDefault();
+    let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+    delta > 0 ? (scaleImages[index] *= 1.05) : (scaleImages[index] /= 1.05);
+    setTransformImg(img, index);
+  };
+});
+
 function salvarComoPNG() {
     const nomeArquivo = nomeFoto.value.trim() || "Imagem"; 
     const jogo = document.getElementById("jogo");
@@ -242,26 +213,4 @@ nomeFoto.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         salvarComoPNG();
     }
-});
-
-const imgElements = [
-    document.getElementById("img1"),
-    document.getElementById("img2"),
-    document.getElementById("img3"),
-    document.getElementById("img4"),
-    document.getElementById("img5")
-  ];
-  
-  const scaleImages = [1, 1, 1, 1, 1];
-  
-  function setTransformImg(el, index) {
-    el.style.transform = `scale(${scaleImages[index]})`;
-  }
-  imgElements.forEach((img, index) => {
-    img.onwheel = function (e) {
-      e.preventDefault();
-      let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
-      delta > 0 ? (scaleImages[index] *= 1.05) : (scaleImages[index] /= 1.05);
-      setTransformImg(img.firstChild, index);
-    };
 });
