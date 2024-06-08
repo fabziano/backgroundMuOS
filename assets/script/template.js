@@ -29,12 +29,14 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         targetElement.innerHTML = "";
                         targetElement.appendChild(img);
                         nomeFoto.focus();
+                        const gradientOverlay = document.getElementById("gradientOverlay");
+
                         
                         if (targetElement === capaJogo || targetElement === logoJogo) {
                             addDragAndDropFunctionality(img);
                         }
                         if (targetElement === backgroundJogo) {
-                            jogo.style.backgroundColor = "#000";
+                            gradientOverlay.style.display = "block";
                         }
                     };
                     reader.readAsDataURL(blob);

@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/template.css">
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   </head>
   <body>
     <header>
@@ -39,9 +39,10 @@
     <main>
         <div class="limite"></div>
         <div id="jogo">
-          <div id="capaJogo" class="zoomCapa"></div>
-          <div id="backgroundJogo"></div>
           <div id="logoJogo" class="zoomLogo"></div>
+          <div id="capaJogo" class="zoomCapa"></div>
+          <div id="gradientOverlay"></div>
+          <div id="backgroundJogo"></div>
         </div>
     </main>
     <section>
@@ -50,6 +51,5 @@
     </section>
     
     <script src="assets/script/template.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   </body>
 </html>
