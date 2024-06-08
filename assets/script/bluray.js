@@ -1,11 +1,6 @@
 const capaJogo = document.getElementById("capaJogo");
-const nomeFoto = document.getElementById("nomeFoto");
 const botaoColarFoto = document.getElementById("botaoColarFoto");
 const botaoColarFoto2 = document.getElementById("botaoColarFoto2");
-const jogo = document.getElementById("jogo");
-const botaoConverterParaPNG = document.getElementById("converterParaPNG");
-
-botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
 
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
@@ -24,9 +19,10 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         targetElement.innerHTML = "";
                         targetElement.appendChild(img);
                         nomeFoto.focus();
+                        const gradientOverlay = document.getElementById("gradientOverlay");
 
                         if (targetElement === backgroundJogo) {
-                            jogo.style.backgroundColor = "#000";
+                            gradientOverlay.style.display = "block";
                         }
                     };
                     reader.readAsDataURL(blob);
@@ -47,26 +43,34 @@ botaoColarFoto2.addEventListener("click", () => {
     handlePasteImage(backgroundJogo, "640px", "480px", "640px", "480px");
 });
 
-function salvarComoPNG() {
-    let nomeArquivo = nomeFoto.value.trim();
-    if (nomeArquivo === "") {
-        nomeArquivo = "Imagem";
-    }
-    html2canvas(jogo, {
-        width: 640,
-        height: 480,
-        scale: 1,
-        backgroundColor: null
-    }).then((canvas) => {
-        const link = document.createElement("a");
-        link.download = nomeArquivo + ".png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-    });
-}
+const jogo = document.getElementById("jogo");
+const nomeFoto = document.getElementById("nomeFoto");
+const botaoConverterParaPNG = document.getElementById("converterParaPNG");
+botaoConverterParaPNG.addEventListener("click", () => salvarComoPNG(jogo, nomeFoto));
 
-nomeFoto.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        salvarComoPNG();
-    }
+nomeFoto.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    salvarComoPNG(jogo, nomeFoto);
+  }
 });
+
+function salvarComoPNG(element, input) {
+  const nomeArquivo = input.value.trim() || "Imagem";
+  const rect = element.getBoundingClientRect();
+
+  domtoimage.toBlob(element, {
+    width: rect.width,
+    height: rect.height,
+    left: rect.left,
+    top: rect.top
+  })
+  .then(blob => {
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = `${nomeArquivo}.png`;
+    link.click();
+  })
+  .catch(error => {
+    console.error("Erro ao salvar como PNG: ", error);
+  });
+}
