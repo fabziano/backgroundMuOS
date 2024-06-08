@@ -1,9 +1,4 @@
-const nomeFoto = document.getElementById("nomeFoto");
 const botaoColarFoto = document.getElementById("botaoColarFoto");
-const jogo = document.getElementById("jogo");
-const botaoConverterParaPNG = document.getElementById("converterParaPNG");
-
-botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
 
 const removerBackgroundBtn = document.getElementById("removerBackgroundBtn");
 removerBackgroundBtn.addEventListener("click", removerBackground);
@@ -167,38 +162,36 @@ botaoColarFoto.addEventListener("click", () => {
         }
     }
 
-    function salvarComoPNG() {
-        const nomeArquivo = nomeFoto.value.trim() || document.getElementById("consoleGames").value;
+    const jogo = document.getElementById("jogo");
+    const nomeFoto = document.getElementById("nomeFoto");
+    const botaoConverterParaPNG = document.getElementById("converterParaPNG");
     
-        html2canvas(jogo, {
-            width: 640,
-            height: 480,
-            scale: 1,
-            backgroundColor: null 
-        }).then((canvas) => {
-            canvas.toBlob(function(blob) {
-                if (blob) {
-                    const url = URL.createObjectURL(blob);
+    botaoConverterParaPNG.addEventListener("click", () => salvarComoPNG(jogo, nomeFoto));
     
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = nomeArquivo + '.png';
+    nomeFoto.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        salvarComoPNG(jogo, nomeFoto);
+      }
+    });
     
-                    link.click();
+    function salvarComoPNG(element, input) {
+      const nomeArquivo = input.value.trim() || "Imagem";
+      const rect = element.getBoundingClientRect();
     
-                    URL.revokeObjectURL(url);
-                } else {
-                    console.error('Erro ao gerar o blob.');
-                }
-            }, 'image/png');
-        });
+      domtoimage.toBlob(element, {
+        width: rect.width,
+        height: rect.height,
+        left: rect.left,
+        top: rect.top
+      })
+      .then(blob => {
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = `${nomeArquivo}.png`;
+        link.click();
+      })
+      .catch(error => {
+        console.error("Erro ao salvar como PNG: ", error);
+      });
     }
     
-    
-
-nomeFoto.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        salvarComoPNG();
-    }
-});
-
