@@ -1,4 +1,5 @@
 const capaJogo = document.getElementById("capaJogo");
+const backgroundJogo = document.getElementById("backgroundJogo");
 const botaoColarFoto = document.getElementById("botaoColarFoto");
 const botaoColarFoto2 = document.getElementById("botaoColarFoto2");
 
