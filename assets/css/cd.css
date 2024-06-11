@@ -12,18 +12,18 @@
 }
 .case {
     position: absolute;
-    width:210px;
-    height:194px;
+    width:240px;
+    height:211px;
     user-select: none;
-    margin-top:14em;
-    margin-left:24.7em;
+    margin-top:8.5em;
+    margin-left:23.5em;
     pointer-events: none; 
     z-index: 4;
   }
   #capaJogo{
       position: absolute;
-      margin-top:14.04em;
-      margin-left:24.75em;
+      margin-top:8.5em;
+      margin-left:23.5em;
       z-index: 3;
   }
   #gradientOverlay {
