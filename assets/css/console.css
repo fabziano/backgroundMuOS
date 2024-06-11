@@ -8,11 +8,11 @@
   }
 #capaJogo{
     position: absolute;
-    margin-top:11.5em;
-    margin-left:24.75em;
+    margin-top:8.5em;
+    margin-left:23em;
     z-index: 3;
-    width:208px;
-    height: 252px;
+    width:245px;
+    height: 296px;
     pointer-events: none; 
 }
 #backgroundJogo {
