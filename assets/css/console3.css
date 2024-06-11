@@ -3,8 +3,10 @@
   height: 480px;
   overflow: hidden;
   position: relative;
-  background-color: transparent; 
-  display: flex;
+  background-image: url('../img/background.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center;  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -29,7 +31,6 @@
 }
 
 #backgroundJogo {
-  background-color: #000; 
   position: absolute;
   overflow: hidden;
   width: 640px;
