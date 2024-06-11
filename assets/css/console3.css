@@ -1,0 +1,47 @@
+#jogo{
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  background-color: transparent; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#capaJogo{
+  position: absolute;
+  z-index: 4;
+  width:400px;
+  pointer-events: none; 
+}
+.cima, .baixo{
+  position: absolute;
+  z-index: 4;
+}
+.cima, .baixo{
+  width: 35px;
+}
+.cima{
+  margin-bottom: 20em;
+}
+.baixo{
+  margin-top: 20em;
+}
+
+#backgroundJogo {
+  background-color: #000; 
+  position: absolute;
+  overflow: hidden;
+  width: 640px;
+  height: 480px;
+  z-index: 1;
+}
+#gradientOverlay {
+  position: absolute;
+  opacity: 0.7;
+  width: 640px;
+  height: 480px;
+  background-color: #000; 
+  z-index: 3;
+  display: none; 
+}

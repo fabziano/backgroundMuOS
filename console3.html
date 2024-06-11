@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Background muOS</title>
+    <link rel="icon" type="image/png" href="assets/img/icon.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/console3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+          <img src="assets/img/icon.png" alt="logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="tutorial" style="color: #1a9fff;">Tutorial</a></li>
+          <li><a href="index">Criativo</a></li>
+          <li><a href="template">Template</a></li>
+          <li><a href="gradiente">Gradiente</a></li>
+          <li><a href="cd">CD</a></li>
+          <li><a href="bluray">Blu-ray</a></li>
+          <li><a href="console">Console</a></li>
+          <li><a href="console2">Console02</a></li>
+          <li><a class="mark" href="console3">Console03</a></li>
+          <li><a href="stockmod" style="color: #799905; text-transform: none;">StockOS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div style="width: 50%;text-align: center;padding: 1em;color: #fff;" class="recado">
+      <strong><p>Caminho para as imagens das pastas: /SD1 (mmc)/MUOS/info/catalogue/Folder</p></strong>
+    </div>
+    <article>
+      <a id="botaoColarFoto" href="#">Colar seu background</a>
+      <a href="#" id="removerBackgroundBtn">Remover Background</a>
+
+      <select id="consoleGames" onchange="changeImage(); changeBackground()">
+        <option value="">Selecione um console</option>
+        <option value="apps">Apps</option>
+        <option value="arcade">Arcade</option>
+        <option value="atari2600">Atari 2600</option>
+        <option value="atarist">Atari ST</option>
+        <option value="bandaiws">Bandai WonderSwan-Color</option>
+        <option value="cps1">CPS1</option>
+        <option value="cps2">CPS2</option>
+        <option value="cps3">CPS3</option>
+        <option value="external">Ports</option>
+        <option value="easyrpg">RPG Maker 2000 - 2003</option>
+        <option value="gameandwatch">Handheld Electronic - Game and Watch</option>
+        <option value="pokemonmini">Nintendo Pokemon Mini</option>
+        <option value="gb">Nintendo Game Boy</option>
+        <option value="gba">Nintendo Game Boy Advance</option>
+        <option value="gbc">Nintendo Game Boy Color</option>
+        <option value="snes">Nintendo SFC</option>
+        <option value="snes2">Nintendo SNES</option>
+        <option value="famicom">Nintendo Family Computer</option>
+        <option value="nes">Nintendo NES</option>
+        <option value="n64">Nintendo N64</option>
+        <option value="nds">Nintendo DS</option>
+        <option value="hbmame">HBMAME</option>
+        <option value="mame">MAME</option>
+        <option value="dreamcast">Sega Dreamcast</option>
+        <option value="naomi">Sega Naomi</option>
+        <option value="gamegear">Sega Game Gear</option>
+        <option value="megacd">Sega Mega CD - Sega CD</option>
+        <option value="megadrive">Sega Mega Drive - Genesis</option>
+        <option value="sega32x">Sega 32X</option>
+        <option value="sms">Sega Master System</option>
+        <option value="neogeo2">SNK Neo Geo MVS</option>
+        <option value="neogeo">SNK Neo Geo</option>
+        <option value="neogeocd">SNK Neo Geo CD</option>
+        <option value="neogeopocket">SNK Neo Geo Pocket - Color</option>
+        <option value="pce">NEC PC Engine</option>
+        <option value="pcfx">NEC PC-FX</option>
+        <option value="pico8">PICO-8</option>
+        <option value="psp">Sony PlayStation Portable</option>
+        <option value="psx">Sony PlayStation</option>
+        <option value="supergrafx">NEC PC Engine SuperGrafx</option>
+    </select>
+    </article>
+    <main>
+        <div class="limite"></div>
+        <div id="jogo">
+            <img class="cima" src="assets/img/cima.png" alt="cima">
+            <img class="baixo" src="assets/img/baixo.png" alt="baixo">
+            <img id="capaJogo" class="jogo" src="assets/img/logo/DEFAULT.png" alt="Imagem do jogo">
+            <div id="gradientOverlay"></div>
+            <div id="backgroundJogo"></div>
+        </div>
+    </main>
+    <section>
+      <input type="text" id="nomeFoto" placeholder="Nome do Arquivo" autocomplete="off">
+      <a id="converterParaPNG" href="#">Baixar Foto</a>
+    </section>
+    
+    <script src="assets/script/console3.js"></script>
+  </body>
+</html>
