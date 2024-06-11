@@ -37,7 +37,7 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
 }
 
 botaoColarFoto.addEventListener("click", () => {
-    handlePasteImage(capaJogo, "153px", "234px", "153px", "234px");
+    handlePasteImage(capaJogo, "210px", "296px", "210px", "296px");
 });
 
 botaoColarFoto2.addEventListener("click", () => {
