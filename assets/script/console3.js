@@ -61,7 +61,8 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
     });
 }
 
-botaoColarFoto.addEventListener("click", () => {
+botaoColarFoto.addEventListener("click", (event) => {
+    event.preventDefault(); 
     handlePasteImage(backgroundJogo, "640px", "480px", "640px", "480px");
 });
 
