@@ -1,9 +1,10 @@
 const botaoColarFoto = document.getElementById("botaoColarFoto");
 
-const removerBackgroundBtn = document.getElementById("removerBackgroundBtn");
-removerBackgroundBtn.addEventListener("click", removerBackground);
-
 // Função para remover o background
+const removerBackgroundBtn = document.getElementById("removerBackgroundBtn");
+removerBackgroundBtn.addEventListener("click", (event) => {
+    event.preventDefault(); 
+});
 function removerBackground() {
     const backgroundImage = document.getElementById("backgroundJogo");
     const gradientOverlay = document.getElementById("gradientOverlay");
