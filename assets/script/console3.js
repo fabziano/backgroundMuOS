@@ -13,6 +13,24 @@ function removerBackground() {
     gradientOverlay.style.display = "none";
 }
 
+// Função para remover setas
+const setaCima = document.querySelector('.cima');
+const setaBaixo = document.querySelector('.baixo');
+const tirarSetasLink = document.getElementById('tirarSetas');
+function tirarSetas() {
+    if (setaCima.style.display === 'none' && setaBaixo.style.display === 'none') {
+        setaCima.style.display = 'block';
+        setaBaixo.style.display = 'block';
+    } else {
+        setaCima.style.display = 'none';
+        setaBaixo.style.display = 'none';
+    }
+}
+tirarSetasLink.addEventListener('click', (event) => {
+    event.preventDefault()
+    tirarSetas();
+});
+
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
         for (const item of clipboardItems) {
