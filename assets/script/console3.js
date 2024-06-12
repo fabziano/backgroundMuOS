@@ -123,7 +123,10 @@ const jogo = document.getElementById("jogo");
 const nomeFoto = document.getElementById("nomeFoto");
 const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 
-botaoConverterParaPNG.addEventListener("click", () => salvarComoPNG(jogo, nomeFoto));
+botaoConverterParaPNG.addEventListener("click", (event) => {
+      event.preventDefault();
+      salvarComoPNG(jogo, nomeFoto);
+});
 
 nomeFoto.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
