@@ -34,48 +34,68 @@
       <a id="removerBackgroundBtn" href="#" role="button">Remover BG</a>
       <a id="tirarSetas" href="#" role="button">Setas</a>
 
-      <select id="consoleGames" onchange="changeImage(); changeBackground()">
+      <select id="consoleGames" onchange="changeImage();">
         <option value="">Selecione um console</option>
-        <option value="apps">Apps</option>
-        <option value="arcade">Arcade</option>
-        <option value="atari2600">Atari 2600</option>
-        <option value="atarist">Atari ST</option>
-        <option value="bandaiws">Bandai WonderSwan-Color</option>
-        <option value="cps1">CPS1</option>
-        <option value="cps2">CPS2</option>
-        <option value="cps3">CPS3</option>
-        <option value="external">Ports</option>
-        <option value="easyrpg">RPG Maker 2000 - 2003</option>
-        <option value="gameandwatch">Handheld Electronic - Game and Watch</option>
-        <option value="pokemonmini">Nintendo Pokemon Mini</option>
-        <option value="gb">Nintendo Game Boy</option>
-        <option value="gba">Nintendo Game Boy Advance</option>
-        <option value="gbc">Nintendo Game Boy Color</option>
-        <option value="snes">Nintendo SFC</option>
-        <option value="snes2">Nintendo SNES</option>
-        <option value="famicom">Nintendo Family Computer</option>
-        <option value="nes">Nintendo NES</option>
-        <option value="n64">Nintendo N64</option>
-        <option value="nds">Nintendo DS</option>
-        <option value="hbmame">HBMAME</option>
-        <option value="mame">MAME</option>
-        <option value="dreamcast">Sega Dreamcast</option>
-        <option value="naomi">Sega Naomi</option>
-        <option value="gamegear">Sega Game Gear</option>
-        <option value="megacd">Sega Mega CD - Sega CD</option>
-        <option value="megadrive">Sega Mega Drive - Genesis</option>
-        <option value="sega32x">Sega 32X</option>
-        <option value="sms">Sega Master System</option>
-        <option value="neogeo2">SNK Neo Geo MVS</option>
-        <option value="neogeo">SNK Neo Geo</option>
-        <option value="neogeocd">SNK Neo Geo CD</option>
-        <option value="neogeopocket">SNK Neo Geo Pocket - Color</option>
-        <option value="pce">NEC PC Engine</option>
-        <option value="pcfx">NEC PC-FX</option>
-        <option value="pico8">PICO-8</option>
-        <option value="psp">Sony PlayStation Portable</option>
-        <option value="psx">Sony PlayStation</option>
-        <option value="supergrafx">NEC PC Engine SuperGrafx</option>
+        <optgroup label="Atari">
+          <option value="atari2600">Atari 2600</option>
+          <option value="atarist">Atari ST</option>
+        </optgroup>
+        <optgroup label="Bandai">
+          <option value="bandaiws">Bandai WonderSwan-Color</option>
+        </optgroup>
+        <optgroup label="Capcom">
+          <option value="cps1">CPS1</option>
+          <option value="cps2">CPS2</option>
+          <option value="cps3">CPS3</option>
+        </optgroup>
+        <optgroup label="MAME">
+          <option value="hbmame">HBMAME</option>
+          <option value="mame">MAME</option>
+        </optgroup>
+        <optgroup label="NEC">
+          <option value="pce">NEC PC Engine</option>
+          <option value="pcfx">NEC PC-FX</option>
+          <option value="supergrafx">NEC PC Engine SuperGrafx</option>
+        </optgroup>
+        <optgroup label="Nintendo">
+          <option value="gb">Nintendo Game Boy</option>
+          <option value="gba">Nintendo Game Boy Advance</option>
+          <option value="gbc">Nintendo Game Boy Color</option>
+          <option value="snes">Nintendo SFC</option>
+          <option value="snes2">Nintendo SNES</option>
+          <option value="famicom">Nintendo Family Computer</option>
+          <option value="nes">Nintendo NES</option>
+          <option value="n64">Nintendo N64</option>
+          <option value="nds">Nintendo DS</option>
+          <option value="gameandwatch">Nintendo Game and Watch</option>
+          <option value="pokemonmini">Nintendo Pokemon Mini</option>
+        </optgroup>
+        <optgroup label="Outros">
+          <option value="arcade">Arcade</option>
+          <option value="apps">Apps</option>
+          <option value="external">Ports</option>
+          <option value="easyrpg">RPG Maker 2000 - 2003</option>
+          <option value="pico8">PICO-8</option>
+        </optgroup>
+        <optgroup label="SEGA">
+          <option value="dreamcast">Sega Dreamcast</option>
+          <option value="naomi">Sega Naomi</option>
+          <option value="gamegear">Sega Game Gear</option>
+          <option value="megacd">Sega Mega CD - Sega CD</option>
+          <option value="megadrive">Sega Mega Drive - Genesis</option>
+          <option value="sega32x">Sega 32X</option>
+          <option value="sms">Sega Master System</option>
+        </optgroup>
+        <optgroup label="SNK">
+          <option value="neogeo2">SNK Neo Geo MVS</option>
+          <option value="neogeo">SNK Neo Geo</option>
+          <option value="neogeocd">SNK Neo Geo CD</option>
+          <option value="neogeopocket">SNK Neo Geo Pocket - Color</option>
+        </optgroup>
+        <optgroup label="Sony">
+          <option value="psp">Sony PlayStation Portable</option>
+          <option value="psx">Sony PlayStation</option>
+        </optgroup>
     </select>
     </article>
     <main>
