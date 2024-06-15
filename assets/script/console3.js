@@ -49,11 +49,15 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         img.style.minHeight = minHeight;
                         img.style.maxWidth = maxWidth;
                         img.style.maxHeight = maxHeight;
+                        img.draggable = false; 
+                        img.id = "draggableImage"; 
+                        img.style.position = "absolute"; 
                         targetElement.innerHTML = "";
                         targetElement.appendChild(img);
                         const gradientOverlay = document.getElementById("gradientOverlay");
                         gradientOverlay.style.display = "block";
                         nomeFoto.focus();
+                        imagemArrastavel(img);
                     };
                     reader.readAsDataURL(blob);
                 });
@@ -67,12 +71,12 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
 
 botaoColarFoto.addEventListener("click", (event) => {
     event.preventDefault(); 
-    handlePasteImage(backgroundJogo, "640px", "480px", "640px", "480px");
+    handlePasteImage(backgroundJogo, "auto", "480px", "auto", "480px");
 });
 
 function changeImage() {
     var selectedConsole = document.getElementById("consoleGames").value;
-    var image = document.getElementById("capaJogo");
+    var image = document.getElementById("logoJogo");
 
     var gameImages = {
         "apps": "assets/img/logo2/apps.png",
@@ -90,8 +94,8 @@ function changeImage() {
         "gb": "assets/img/logo2/gb.png",
         "gba": "assets/img/logo2/gba.png",
         "gbc": "assets/img/logo2/gbc.png",
-        "snes": "assets/img/logo2/snes.png",
-        "snes2": "assets/img/logo2/snes2.png",
+        "snes2": "assets/img/logo2/snes.png",
+        "snes": "assets/img/logo2/snes2.png",
         "famicom": "assets/img/logo2/famicom.png",
         "hbmame": "assets/img/logo2/hbmame.png",
         "mame": "assets/img/logo2/mame.png",
@@ -159,3 +163,52 @@ function salvarComoPNG(element, input) {
         console.error("Erro ao salvar como PNG: ", error);
     });
 }
+
+function imagemArrastavel(img) {
+    let isDragging = false;
+    let initialX, initialY;
+    let offsetX, offsetY;
+    img.addEventListener('mousedown', (event) => {
+        isDragging = true;
+        initialX = event.clientX;
+        initialY = event.clientY;
+        offsetX = img.offsetLeft;
+        offsetY = img.offsetTop;
+        img.style.zIndex = 1000; 
+        
+        document.addEventListener('mousemove', onMouseMove);
+    });
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            img.style.zIndex = 2; 
+            document.removeEventListener('mousemove', onMouseMove);
+        }
+    });
+    function onMouseMove(event) {
+        if (isDragging) {
+            const currentX = event.clientX;
+            const currentY = event.clientY;
+            const dx = currentX - initialX;
+            const dy = currentY - initialY;
+            img.style.left = (offsetX + dx) + 'px';
+            img.style.top = (offsetY + dy) + 'px'; 
+        }
+    }
+}
+
+let scale = 1;
+zoomElements = document.querySelectorAll(".zoom");
+
+function setTransform(el) {
+    el.style.transform = "scale(" + scale + ")";
+}
+
+Array.prototype.map.call(zoomElements, item => {
+    item.onwheel = function (e) {
+        e.preventDefault();
+        let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+        (delta > 0) ? (scale *= 1.05) : (scale /= 1.05);
+        setTransform(item.firstChild);
+    }
+});
