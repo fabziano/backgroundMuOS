@@ -1,7 +1,12 @@
 const botaoColarFoto = document.getElementById("botaoColarFoto");
 
+// Função para remover o background
 const removerBackgroundBtn = document.getElementById("removerBackgroundBtn");
-removerBackgroundBtn.addEventListener("click", removerBackground);
+
+removerBackgroundBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    removerBackground();
+});
 
 function removerBackground() {
     const backgroundImage = document.getElementById("backgroundJogo");
@@ -11,6 +16,24 @@ function removerBackground() {
     backgroundImage.innerHTML = "";
     gradientOverlay.style.display = "none";
 }
+
+// Função para remover setas
+const setaCima = document.querySelector('.cima');
+const setaBaixo = document.querySelector('.baixo');
+const tirarSetasLink = document.getElementById('tirarSetas');
+function tirarSetas() {
+    if (setaCima.style.display === 'none' && setaBaixo.style.display === 'none') {
+        setaCima.style.display = 'block';
+        setaBaixo.style.display = 'block';
+    } else {
+        setaCima.style.display = 'none';
+        setaBaixo.style.display = 'none';
+    }
+}
+tirarSetasLink.addEventListener('click', (event) => {
+    event.preventDefault()
+    tirarSetas();
+});
 
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
@@ -26,11 +49,15 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         img.style.minHeight = minHeight;
                         img.style.maxWidth = maxWidth;
                         img.style.maxHeight = maxHeight;
+                        img.draggable = false; 
+                        img.id = "draggableImage"; 
+                        img.style.position = "absolute"; 
                         targetElement.innerHTML = "";
                         targetElement.appendChild(img);
                         const gradientOverlay = document.getElementById("gradientOverlay");
                         gradientOverlay.style.display = "block";
                         nomeFoto.focus();
+                        imagemArrastavel(img);
                     };
                     reader.readAsDataURL(blob);
                 });
@@ -42,95 +69,147 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
     });
 }
 
-botaoColarFoto.addEventListener("click", () => {
-    handlePasteImage(backgroundJogo, "640px", "480px", "640px", "480px");
+botaoColarFoto.addEventListener("click", (event) => {
+    event.preventDefault(); 
+    handlePasteImage(backgroundJogo, "auto", "480px", "auto", "480px");
 });
 
 function changeImage() {
     var selectedConsole = document.getElementById("consoleGames").value;
-    var image = document.getElementById("capaJogo");
+    var logoJogo = document.getElementById("logoJogo");
 
     var gameImages = {
-        "amstradcpc": "assets/img/wheels/amstradcpc.png",
-        "apps": "assets/img/wheels/apps.png",
-        "arcade": "assets/img/wheels/arcade.png",
-        "atari2600": "assets/img/wheels/atari2600.png",
-        "atari5200": "assets/img/wheels/atari5200.png",
-        "atari7800": "assets/img/wheels/atari7800.png",
-        "atarilynx": "assets/img/wheels/atarilynx.png",
-        "colecovision": "assets/img/wheels/colecovision.png",
-        "cps1": "assets/img/wheels/cps1.png",
-        "cps2": "assets/img/wheels/cps2.png",
-        "cps3": "assets/img/wheels/cps3.png",
-        "daphne": "assets/img/wheels/daphne.png",
-        "gb": "assets/img/wheels/gb.png",
-        "gba": "assets/img/wheels/gba.png",
-        "gbc": "assets/img/wheels/gbc.png",
-        "msx": "assets/img/wheels/msx.png",
-        "nds": "assets/img/wheels/nds.png",
-        "neogeo": "assets/img/wheels/neogeo.png",
-        "neogeocd": "assets/img/wheels/neogeocd.png",
-        "ngpc": "assets/img/wheels/ngpc.png",
-        "n64": "assets/img/wheels/n64.png",
-        "nes": "assets/img/wheels/nes.png",
-        "openbor": "assets/img/wheels/openbor.png",
-        "pcengine": "assets/img/wheels/pcengine.png",
-        "pce-cd": "assets/img/wheels/pce-cd.png",
-        "ports": "assets/img/wheels/ports.png",
-        "psp": "assets/img/wheels/psp.png",
-        "psx": "assets/img/wheels/psx.png",
-        "sega32x": "assets/img/wheels/sega32x.png",
-        "segacd": "assets/img/wheels/segacd.png",
-        "gamegear": "assets/img/wheels/gamegear.png",
-        "mastersystem": "assets/img/wheels/mastersystem.png",
-        "megadrive": "assets/img/wheels/megadrive.png",
-        "naomi": "assets/img/wheels/naomi.png",
-        "sg-1000": "assets/img/wheels/sg-1000.png",
-        "x68000": "assets/img/wheels/x68000.png",
-        "zxspectrum": "assets/img/wheels/zxspectrum.png",
-        "snes": "assets/img/wheels/snes.png",
-        "tic80": "assets/img/wheels/tic80.png",
-        "vectrex": "assets/img/wheels/vectrex.png",
-        "wonderswancolor": "assets/img/wheels/wonderswancolor.png"
+        "arcade": "assets/img/logo3/arcade.webp",
+        "atari2600": "assets/img/logo3/atari2600.webp",
+        "atari5200": "assets/img/logo3/atari5200.webp",
+        "atari7800": "assets/img/logo3/atari7800.webp",
+        "atarilynx": "assets/img/logo3/atarilynx.webp",
+        "atarist": "assets/img/logo3/atarist.webp",
+        "bandaiws": "assets/img/logo3/wonderswancolor.webp",
+        "cps1": "assets/img/logo3/cps1.webp",
+        "cps2": "assets/img/logo3/cps2.webp",
+        "cps3": "assets/img/logo3/cps3.webp",
+        "external": "assets/img/logo3/ports.webp",
+        "easyrpg": "assets/img/logo3/easyrpg.webp",
+        "gameandwatch": "assets/img/logo3/gameandwatch.webp",
+        "pokemonmini": "assets/img/logo3/pokemini.webp",
+        "gb": "assets/img/logo3/gb.webp",
+        "gba": "assets/img/logo3/gba.webp",
+        "gbc": "assets/img/logo3/gbc.webp",
+        "snes": "assets/img/logo3/snes.webp",
+        "snes2": "assets/img/logo3/snes2.webp",
+        "famicom": "assets/img/logo3/famicom.webp",
+        "mame": "assets/img/logo3/mame.webp",
+        "gamegear": "assets/img/logo3/gamegear.webp",
+        "dreamcast": "assets/img/logo3/dreamcast.webp",
+        "naomi": "assets/img/logo3/naomi.webp",
+        "megacd": "assets/img/logo3/segacd.webp",
+        "megadrive": "assets/img/logo3/megadrive.webp",
+        "sega32x": "assets/img/logo3/sega32x.webp",
+        "sms": "assets/img/logo3/mastersystem.webp",
+        "n64": "assets/img/logo3/n64.webp",
+        "nds": "assets/img/logo3/nds.webp",
+        "neogeo": "assets/img/logo3/neogeo.webp",
+        "neogeocd": "assets/img/logo3/neogeocd.webp",
+        "neogeopocket": "assets/img/logo3/ngpc.webp",
+        "nes": "assets/img/logo3/nes.webp",
+        "pce": "assets/img/logo3/pcengine.webp",
+        "pcfx": "assets/img/logo3/pcfx.webp",
+        "pico8": "assets/img/logo3/pico8.webp",
+        "psp": "assets/img/logo3/psp.webp",
+        "psx": "assets/img/logo3/psx.webp",
+        "supergrafx": "assets/img/logo3/supergrafx.webp",
     };
-    
 
-    if (selectedConsole in gameImages) {
-        image.src = gameImages[selectedConsole];
+    if (gameImages[selectedConsole]) {
+        logoJogo.src = gameImages[selectedConsole];
     } else {
-        image.src = "assets/img/logo/DEFAULT.png";
+        logoJogo.src = "assets/img/logo/DEFAULT.png";
     }
 }
+
 
 const jogo = document.getElementById("jogo");
 const nomeFoto = document.getElementById("nomeFoto");
 const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 
-botaoConverterParaPNG.addEventListener("click", () => salvarComoPNG(jogo, nomeFoto));
+botaoConverterParaPNG.addEventListener("click", (event) => {
+      event.preventDefault();
+      salvarComoPNG(jogo, nomeFoto);
+});
 
 nomeFoto.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    salvarComoPNG(jogo, nomeFoto);
-  }
+    if (event.key === "Enter") {
+        salvarComoPNG(jogo, nomeFoto);
+    }
 });
 
 function salvarComoPNG(element, input) {
-  const nomeArquivo = input.value.trim() || "Imagem";
-  const rect = element.getBoundingClientRect();
+    const nomeArquivo = input.value.trim() || "Imagem";
+    const rect = element.getBoundingClientRect();
 
-  domtoimage.toBlob(element, {
-    width: rect.width,
-    height: rect.height,
-    left: rect.left,
-    top: rect.top
-  })
-  .then(blob => {
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.download = `${nomeArquivo}.png`;
-    link.click();
-  })
-  .catch(error => {
-    console.error("Erro ao salvar como PNG: ", error);
-  });
+    domtoimage.toBlob(element, {
+        width: rect.width,
+        height: rect.height,
+        left: rect.left,
+        top: rect.top
+    })
+    .then(blob => {
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = `${nomeArquivo}.png`;
+        link.click();
+    })
+    .catch(error => {
+        console.error("Erro ao salvar como PNG: ", error);
+    });
 }
+
+function imagemArrastavel(img) {
+    let isDragging = false;
+    let initialX, initialY;
+    let offsetX, offsetY;
+    img.addEventListener('mousedown', (event) => {
+        isDragging = true;
+        initialX = event.clientX;
+        initialY = event.clientY;
+        offsetX = img.offsetLeft;
+        offsetY = img.offsetTop;
+        img.style.zIndex = 1000; 
+        
+        document.addEventListener('mousemove', onMouseMove);
+    });
+    document.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            img.style.zIndex = 2; 
+            document.removeEventListener('mousemove', onMouseMove);
+        }
+    });
+    function onMouseMove(event) {
+        if (isDragging) {
+            const currentX = event.clientX;
+            const currentY = event.clientY;
+            const dx = currentX - initialX;
+            const dy = currentY - initialY;
+            img.style.left = (offsetX + dx) + 'px';
+            img.style.top = (offsetY + dy) + 'px'; 
+        }
+    }
+}
+
+let scale = 1;
+zoomElements = document.querySelectorAll(".zoom");
+
+function setTransform(el) {
+    el.style.transform = "scale(" + scale + ")";
+}
+
+Array.prototype.map.call(zoomElements, item => {
+    item.onwheel = function (e) {
+        e.preventDefault();
+        let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+        (delta > 0) ? (scale *= 1.05) : (scale /= 1.05);
+        setTransform(item.firstChild);
+    }
+});

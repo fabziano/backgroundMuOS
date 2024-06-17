@@ -1,32 +1,51 @@
 #jogo{
-    width: 640px;
-    height: 480px;
-    overflow: hidden;
-    position: relative;
-    background-color: transparent; 
-    mask-image: linear-gradient(90deg, transparent 0%, black 58%);
-
-  }
-#capaJogo{
-    position: absolute;
-    z-index: 3;
-    height: auto;
-    pointer-events: none; 
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  background-image: url('../img/background.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center;  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#backgroundJogo {
-    position: absolute;
-    overflow: hidden;
-    width: 640px;
-    height: 480px;
-    z-index: 1;
+#logoJogo{
+  position: absolute;
+  z-index: 4;
+  width:400px;
+  pointer-events: none; 
+}
+.cima, .baixo{
+  position: absolute;
+  z-index: 4;
+  width: 35px;
+  pointer-events: none; 
+}
+.cima{
+  margin-bottom: 20em;
+}
+.baixo{
+  margin-top: 20em;
+}
 
+#backgroundJogo {
+  position: absolute;
+  overflow: hidden;
+  cursor: move; 
+  width: 640px;
+  height: 480px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 #gradientOverlay {
-    position: absolute;
-    opacity: 0.7;
-    width: 640px;
-    height: 480px;
-    background-color: #000; 
-    z-index: 2;
-    display: none; 
-  }
+  position: absolute;
+  opacity: 0.6;
+  width: 640px;
+  height: 480px;
+  background-color: #000; 
+  z-index: 3;
+  display: none; 
+  pointer-events: none; 
+}
