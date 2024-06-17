@@ -1,13 +1,11 @@
 const capaJogo = document.getElementById("capaJogo");
-const jogo = document.getElementById("jogo");
+
 const logoJogo = document.getElementById("logoJogo");
-const nomeFoto = document.getElementById("nomeFoto");
+
 const botaoColarFoto = document.getElementById("botaoColarFoto");
 const botaoColarFoto2 = document.getElementById("botaoColarFoto2");
 const botaoColarFoto3 = document.getElementById("botaoColarFoto3");
-const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 
-botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
 
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
@@ -61,6 +59,11 @@ botaoColarFoto2.addEventListener("click", () => {
 botaoColarFoto3.addEventListener("click", () => {
     handlePasteImage(logoJogo, "250px", "auto", "250px", "auto");
 });
+
+const jogo = document.getElementById("jogo");
+const nomeFoto = document.getElementById("nomeFoto");
+const botaoConverterParaPNG = document.getElementById("converterParaPNG");
+botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
 
 function salvarComoPNG() {
     const nomeArquivo = nomeFoto.value.trim() || "Imagem"; 
@@ -160,12 +163,4 @@ Array.prototype.map.call(zoomLogoElements, item => {
     (delta > 0) ? (scaleLogo *= 1.05) : (scaleLogo /= 1.05);
     setTransformLogo(item.firstChild);
   }
-});
-
-const PlanoDeFundo = document.querySelector('#jogo');
-const seletor = document.getElementById('seletor');
-
-seletor.addEventListener('input', () => {
-    const corEscolhida = seletor.value;
-    PlanoDeFundo.style.backgroundColor = corEscolhida;
 });
