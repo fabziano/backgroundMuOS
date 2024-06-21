@@ -97,6 +97,7 @@ function changeImage() {
         "external": "assets/img/logo2/ports.png",
         "easyrpg": "assets/img/logo2/easyrpg.png",
         "atomiswave": "assets/img/logo2/atomiswave.png",
+        "msx": "assets/img/logo2/msx.png",
         "fbn": "assets/img/logo2/fbn.png",
         "gameandwatch": "assets/img/logo2/gameandwatch.png",
         "pokemonmini": "assets/img/logo2/pokemini.png",
