@@ -53,6 +53,8 @@ botaoColarFoto.addEventListener("click", () => {
         
         var gameImages = {
         "apps": "assets/img/logo/apps.png",
+        "sd1": "assets/img/logo/sd1.png",
+        "sd2": "assets/img/logo/sd2.png",
         "arcade": "assets/img/logo/arcade.png",
         "atari2600": "assets/img/logo/atari2600.png",
         "atari5200": "assets/img/logo/atari5200.png",
@@ -112,6 +114,8 @@ botaoColarFoto.addEventListener("click", () => {
         
         var backgroundImages = {
             "apps": "url(assets/img/background/apps.webp)",
+            "sd1": "url(assets/img/background/apps.webp)",
+            "sd2": "url(assets/img/background/apps.webp)",
             "arcade": "url(assets/img/background/arcade.webp)",
             "atari2600": "url(assets/img/background/atari2600.webp)",
             "atari5200": "url(assets/img/background/atari5200.webp)",

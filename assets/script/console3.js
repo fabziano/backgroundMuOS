@@ -79,6 +79,8 @@ function changeImage() {
     var image = document.getElementById("logoJogo");
 
     var gameImages = {
+        "sd1": "assets/img/logo2/sd1.png",
+        "sd2": "assets/img/logo2/sd2.png",
         "apps": "assets/img/logo2/apps.png",
         "arcade": "assets/img/logo2/arcade.png",
         "varcade": "assets/img/logo2/verticalarcade.png",
