@@ -141,6 +141,7 @@ botaoColarFoto.addEventListener("click", () => {
             "megadrive": "url(assets/img/background/megadrive.webp)",
             "sega32x": "url(assets/img/background/sega32x.webp)",
             "sms": "url(assets/img/background/mastersystem.webp)",
+            "saturn": "url(assets/img/background/saturn.webp)",
             "n64": "url(assets/img/background/n64.webp)",
             "nds": "url(assets/img/background/nds.webp)",
             "neogeo2": "url(assets/img/background/neogeo2.webp)",
