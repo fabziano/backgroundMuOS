@@ -52,6 +52,7 @@ botaoColarFoto.addEventListener("click", () => {
         var image = document.getElementById("capaJogo");
         
         var gameImages = {
+        "openbor": "assets/img/logo/openbor.png",
         "apps": "assets/img/logo/apps.png",
         "sd1": "assets/img/logo/sd1.png",
         "sd2": "assets/img/logo/sd2.png",
@@ -113,6 +114,7 @@ botaoColarFoto.addEventListener("click", () => {
         var gradientOverlay = document.getElementById("gradientOverlay"); 
         
         var backgroundImages = {
+            "openbor": "url(assets/img/background/openbor.webp)",
             "apps": "url(assets/img/background/apps.webp)",
             "sd1": "url(assets/img/background/apps.webp)",
             "sd2": "url(assets/img/background/apps.webp)",

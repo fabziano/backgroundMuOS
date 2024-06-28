@@ -79,6 +79,7 @@ function changeImage() {
     var image = document.getElementById("logoJogo");
 
     var gameImages = {
+        "openbor": "assets/img/logo2/openbor.png",
         "sd1": "assets/img/logo2/sd1.png",
         "sd2": "assets/img/logo2/sd2.png",
         "apps": "assets/img/logo2/apps.png",
