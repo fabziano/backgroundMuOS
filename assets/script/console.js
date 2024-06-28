@@ -82,6 +82,7 @@ botaoColarFoto.addEventListener("click", () => {
         "megadrive": "assets/img/logo/megadrive.png",
         "sega32x": "assets/img/logo/sega32x.png",
         "sms": "assets/img/logo/mastersystem.png",
+        "saturn": "assets/img/logo/saturn.png",
         "n64": "assets/img/logo/n64.png",
         "nds": "assets/img/logo/nds.png",
         "neogeo2": "assets/img/logo/neogeo2.png",

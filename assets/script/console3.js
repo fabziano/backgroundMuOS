@@ -119,6 +119,7 @@ function changeImage() {
         "megadriveh": "assets/img/logo2/megadriveh.png",
         "sega32x": "assets/img/logo2/sega32x.png",
         "sms": "assets/img/logo2/mastersystem.png",
+        "saturn": "assets/img/logo2/saturn.png",
         "n64": "assets/img/logo2/n64.png",
         "nds": "assets/img/logo2/nds.png",
         "snk": "assets/img/logo2/snk.png",

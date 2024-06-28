@@ -115,6 +115,7 @@ function changeImage() {
         "sega32x": "assets/img/logo3/sega32x.webp",
         "sega32x2": "assets/img/logo3/sega32x2.webp",
         "sms": "assets/img/logo3/mastersystem.webp",
+        "saturn": "assets/img/logo3/saturn.webp",
         "n64": "assets/img/logo3/n64.webp",
         "nds": "assets/img/logo3/nds.webp",
         "neogeo": "assets/img/logo3/neogeo.webp",
