@@ -81,6 +81,7 @@ function changeImage() {
     var gameImages = {
         "sd1": "assets/img/logo3/sd1.webp",
         "sd2": "assets/img/logo3/sd2.webp",
+        "openbor": "assets/img/logo3/openbor.webp",
         "arcade": "assets/img/logo3/arcade.webp",
         "amiga": "assets/img/logo3/amiga.webp",
         "c64": "assets/img/logo3/c64.webp",
