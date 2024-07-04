@@ -1,3 +1,5 @@
+const jogo = document.getElementById("jogo");
+
 const capaJogo = document.getElementById("capaJogo");
 
 const logoJogo = document.getElementById("logoJogo");
@@ -5,6 +7,22 @@ const logoJogo = document.getElementById("logoJogo");
 const botaoColarFoto = document.getElementById("botaoColarFoto");
 const botaoColarFoto2 = document.getElementById("botaoColarFoto2");
 const botaoColarFoto3 = document.getElementById("botaoColarFoto3");
+
+let gradientePresente = false;
+
+function aplicarGradiente() {
+    gradientePresente = !gradientePresente;
+    if (gradientePresente) {
+        jogo.classList.add('gradiente');
+    } else {
+        jogo.classList.remove('gradiente');
+    }
+}
+
+document.getElementById("AplicarGradient").addEventListener("click", function (event) {
+    event.preventDefault();
+    aplicarGradiente();
+});
 
 
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
@@ -35,6 +53,7 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         }
                         if (targetElement === backgroundJogo) {
                             gradientOverlay.style.display = "block";
+                            jogo.style.backgroundColor = "#202020"
                         }
                     };
                     reader.readAsDataURL(blob);
@@ -60,7 +79,6 @@ botaoColarFoto3.addEventListener("click", () => {
     handlePasteImage(logoJogo, "250px", "auto", "250px", "auto");
 });
 
-const jogo = document.getElementById("jogo");
 const nomeFoto = document.getElementById("nomeFoto");
 const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
