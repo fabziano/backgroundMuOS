@@ -43,7 +43,7 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
             if (item.types.includes("image/png") || item.types.includes("image/jpeg")) {
                 item.getType("image/png").then((blob) => {
                     const reader = new FileReader();
-                    reader.onload = function(event) {
+                    reader.onload = function (event) {
                         const dataURL = event.target.result;
                         const img = new Image();
                         img.src = dataURL;
@@ -51,18 +51,14 @@ function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeigh
                         img.style.minHeight = minHeight;
                         img.style.maxWidth = maxWidth;
                         img.style.maxHeight = maxHeight;
-                        img.draggable = false; 
-                        img.id = "draggableImage"; 
-                        img.style.position = "absolute"; 
+                        img.draggable = false;
+                        img.id = "draggableImage";
+                        img.style.position = "absolute";
                         targetElement.innerHTML = "";
                         targetElement.appendChild(img);
                         nomeFoto.focus();
                         const gradientOverlay = document.getElementById("gradientOverlay");
-
-                        
-                        if (targetElement === capaJogo || targetElement === logoJogo) {
-                            addDragAndDropFunctionality(img);
-                        }
+                        addDragAndDropFunctionality(img);
                         if (targetElement === backgroundJogo) {
                             gradientOverlay.style.display = "block";
                             jogo.style.backgroundColor = "#202020"
@@ -84,7 +80,7 @@ botaoColarFoto.addEventListener("click", () => {
 });
 
 botaoColarFoto2.addEventListener("click", () => {
-    handlePasteImage(backgroundJogo, "640px", "480px", "640px", "480px");
+    handlePasteImage(backgroundJogo, "auto", "480px", "auto", "480px");
 });
 
 botaoColarFoto3.addEventListener("click", () => {
@@ -96,66 +92,66 @@ const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
 
 function salvarComoPNG() {
-    const nomeArquivo = nomeFoto.value.trim() || "Imagem"; 
+    const nomeArquivo = nomeFoto.value.trim() || "Imagem";
     const jogo = document.getElementById("jogo");
-    const rect = jogo.getBoundingClientRect(); 
+    const rect = jogo.getBoundingClientRect();
 
-    domtoimage.toBlob(jogo, { 
-        width: rect.width, 
-        height: rect.height, 
-        left: rect.left, 
-        top: rect.top 
+    domtoimage.toBlob(jogo, {
+        width: rect.width,
+        height: rect.height,
+        left: rect.left,
+        top: rect.top
     })
-    .then(blob => {
-        const link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        link.download = `${nomeArquivo}.png`;
-        link.click();
-    })
-    .catch(error => {
-        console.error("Erro ao salvar como PNG: ", error);
-    });
+        .then(blob => {
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = `${nomeArquivo}.png`;
+            link.click();
+        })
+        .catch(error => {
+            console.error("Erro ao salvar como PNG: ", error);
+        });
 }
 
 function addDragAndDropFunctionality(img) {
     let isDragging = false;
     let initialX, initialY;
     let offsetX, offsetY;
-    
+
     img.addEventListener('mousedown', (event) => {
         isDragging = true;
         initialX = event.clientX;
         initialY = event.clientY;
         offsetX = img.offsetLeft;
         offsetY = img.offsetTop;
-        img.style.zIndex = 1000; 
-        
+        img.style.zIndex = 1000;
+
         document.addEventListener('mousemove', onMouseMove);
     });
-    
+
     document.addEventListener('mouseup', () => {
         if (isDragging) {
             isDragging = false;
-            img.style.zIndex = 2; 
+            img.style.zIndex = 2;
             document.removeEventListener('mousemove', onMouseMove);
         }
     });
-    
+
     function onMouseMove(event) {
         if (isDragging) {
             const currentX = event.clientX;
             const currentY = event.clientY;
             const dx = currentX - initialX;
             const dy = currentY - initialY;
-                img.style.left = (offsetX + dx) + 'px';
-                img.style.left = (offsetX + dx) + 'px'; 
-                img.style.top = (offsetY + dy) + 'px'; 
+            img.style.left = (offsetX + dx) + 'px';
+            img.style.left = (offsetX + dx) + 'px';
+            img.style.top = (offsetY + dy) + 'px';
 
         }
     }
 }
 
-nomeFoto.addEventListener("keypress", function(event) {
+nomeFoto.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         salvarComoPNG();
     }
@@ -163,34 +159,27 @@ nomeFoto.addEventListener("keypress", function(event) {
 
 //Zoom de Capa e Logo
 
-let scaleCapa = 1;
-let scaleLogo = 1;
+const imgElements = [
+    document.getElementById("logoJogo"),
+    document.getElementById("capaJogo"),
+    document.getElementById("backgroundJogo"),
+];
 
-const zoomCapaElements = document.querySelectorAll(".zoomCapa");
-const zoomLogoElements = document.querySelectorAll(".zoomLogo");
+const scaleImages = [1, 1, 1];
 
-function setTransformCapa(el) {
-  el.style.transform = `scale(${scaleCapa}) skewX(6deg)`;
+function setTransformImg(el, index) {
+    if (index === 1) {
+        el.style.transform = `scale(${scaleImages[index]}) skewX(6deg)`;
+    } else {
+        el.style.transform = `scale(${scaleImages[index]})`;
+    }
 }
 
-function setTransformLogo(el) {
-  el.style.transform = `scale(${scaleLogo})`;
-}
-
-Array.prototype.map.call(zoomCapaElements, item => {
-  item.onwheel = function (e) {
-    e.preventDefault();
-    let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
-    (delta > 0) ? (scaleCapa *= 1.05) : (scaleCapa /= 1.05);
-    setTransformCapa(item.firstChild);
-  }
-});
-
-Array.prototype.map.call(zoomLogoElements, item => {
-  item.onwheel = function (e) {
-    e.preventDefault();
-    let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
-    (delta > 0) ? (scaleLogo *= 1.05) : (scaleLogo /= 1.05);
-    setTransformLogo(item.firstChild);
-  }
+imgElements.forEach((img, index) => {
+    img.onwheel = function (e) {
+        e.preventDefault();
+        let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+        delta > 0 ? (scaleImages[index] *= 1.05) : (scaleImages[index] /= 1.05);
+        setTransformImg(img.firstChild, index);
+    };
 });
