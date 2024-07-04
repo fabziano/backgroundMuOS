@@ -24,6 +24,18 @@ document.getElementById("AplicarGradient").addEventListener("click", function (e
     aplicarGradiente();
 });
 
+const formatoCapa = document.getElementById("formatoCapa");
+
+formatoCapa.addEventListener("click", (event) => {
+    event.preventDefault();
+    const currentWidth = capaJogo.style.width;
+    if (currentWidth === "220px" || currentWidth === "") {
+        capaJogo.style.width = "280px";
+    } else {
+        capaJogo.style.width = "220px";
+    }
+});
+
 
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
