@@ -13,6 +13,22 @@ function removerBackground() {
     gradientOverlay.style.display = "none";
 }
 
+let gradientePresente = false;
+
+function aplicarGradiente() {
+    gradientePresente = !gradientePresente;
+    if (gradientePresente) {
+        jogo.classList.add('gradiente');
+    } else {
+        jogo.classList.remove('gradiente');
+    }
+}
+
+document.getElementById("AplicarGradient").addEventListener("click", function (event) {
+    event.preventDefault();
+    aplicarGradiente();
+});
+
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
         for (const item of clipboardItems) {

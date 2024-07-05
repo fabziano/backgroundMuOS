@@ -1,38 +1,45 @@
-#jogo{
-    background-color: transparent; 
+#jogo {
+    background-color: transparent;
     position: relative;
     width: 640px;
     height: 480px;
-    pointer-events: none; 
+    pointer-events: none;
+}
+
+#jogo.gradiente {
     mask-image: linear-gradient(90deg, transparent 0%, black 58%);
 }
-#backgroundJogo{
+
+#backgroundJogo {
     position: absolute;
     z-index: 1;
 }
+
 .case {
     position: absolute;
     width: 220px;
     height: 272px;
     user-select: none;
-    margin-top:6.6em;
-    margin-left:25.2em;
-    pointer-events: none; 
+    margin-top: 6.6em;
+    margin-left: 25.2em;
+    pointer-events: none;
     z-index: 4;
 }
-#capaJogo img{
+
+#capaJogo img {
     position: absolute;
-    margin-top:7em;
-    margin-left:26.95em;
+    margin-top: 7em;
+    margin-left: 26.95em;
     border-radius: 4px;
     z-index: 3;
 }
+
 #gradientOverlay {
     position: absolute;
     opacity: 0.7;
     width: 640px;
     height: 480px;
-    background-color: #000; 
+    background-color: #000;
     z-index: 2;
-    display: none; 
-  }
+    display: none;
+}

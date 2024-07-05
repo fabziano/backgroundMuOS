@@ -3,6 +3,22 @@ const backgroundJogo = document.getElementById("backgroundJogo");
 const botaoColarFoto = document.getElementById("botaoColarFoto");
 const botaoColarFoto2 = document.getElementById("botaoColarFoto2");
 
+let gradientePresente = false;
+
+function aplicarGradiente() {
+    gradientePresente = !gradientePresente;
+    if (gradientePresente) {
+        jogo.classList.add('gradiente');
+    } else {
+        jogo.classList.remove('gradiente');
+    }
+}
+
+document.getElementById("AplicarGradient").addEventListener("click", function (event) {
+    event.preventDefault();
+    aplicarGradiente();
+});
+
 function handlePasteImage(targetElement, minWidth, minHeight, maxWidth, maxHeight) {
     navigator.clipboard.read().then((clipboardItems) => {
         for (const item of clipboardItems) {
