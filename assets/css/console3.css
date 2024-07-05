@@ -3,7 +3,7 @@
   height: 480px;
   overflow: hidden;
   position: relative;
-  background-image: url('../img/background.png');
+  background-image: url('../img/background/apps.webp');
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center center;  display: flex;
