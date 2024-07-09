@@ -68,6 +68,7 @@ botaoColarFoto.addEventListener("click", () => {
         var image = document.getElementById("capaJogo");
         
         var gameImages = {
+        "atomiswave": "assets/img/logo/atomiswave.png",    
         "openbor": "assets/img/logo/openbor.png",
         "apps": "assets/img/logo/apps.png",
         "sd1": "assets/img/logo/sd1.png",
@@ -131,6 +132,7 @@ botaoColarFoto.addEventListener("click", () => {
         var gradientOverlay = document.getElementById("gradientOverlay"); 
         
         var backgroundImages = {
+            "atomiswave": "url(assets/img/background/atomiswave.webp)",
             "openbor": "url(assets/img/background/openbor.webp)",
             "apps": "url(assets/img/background/apps.webp)",
             "sd1": "url(assets/img/background/apps.webp)",
