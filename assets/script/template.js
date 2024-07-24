@@ -92,25 +92,23 @@ const botaoConverterParaPNG = document.getElementById("converterParaPNG");
 botaoConverterParaPNG.addEventListener("click", salvarComoPNG);
 
 function salvarComoPNG() {
-    const nomeArquivo = nomeFoto.value.trim() || "Imagem";
-    const jogo = document.getElementById("jogo");
-    const rect = jogo.getBoundingClientRect();
-
-    domtoimage.toBlob(jogo, {
-        width: rect.width,
-        height: rect.height,
-        left: rect.left,
-        top: rect.top
-    })
-        .then(blob => {
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = `${nomeArquivo}.png`;
-            link.click();
-        })
-        .catch(error => {
-            console.error("Erro ao salvar como PNG: ", error);
-        });
+	const e = nomeFoto.value.trim() || "img",
+		o = document.getElementById("jogo"),
+		t = o.offsetHeight;
+	domtoimage.toBlob(o, {
+		width: o.offsetWidth,
+		height: t,
+		style: {
+			transform: "scale(1)",
+			left: 0,
+			top: 0
+		}
+	}).then((o => {
+		const t = document.createElement("a");
+		t.href = window.URL.createObjectURL(o), t.download = `${e}.png`, t.click()
+	})).catch((e => {
+		console.error("Erro ao salvar como PNG: ", e)
+	}))
 }
 
 function addDragAndDropFunctionality(img) {
